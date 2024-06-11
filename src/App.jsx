@@ -13,9 +13,12 @@ import Home from './Components/Map/Controls/Home/Home';
 import ZoomIn from './Components/Map/Controls/ZoomIn/ZoomIn';
 import PreviousExtend from './Components/Map/Controls/PreviousExtend/PreviousExtend';
 
+<<<<<<< HEAD
 import ProductFilter from './Components/Map/Controls/ProductFilter/ProductFilter';
 import LayerSwitcher from './Components/Map/Controls/LayerSwitcher/LayerSwitcher';
 import AttributeQuery from './Components/Map/Controls/AttributeQuery/AttributeQuery';
+=======
+>>>>>>> 8a4e9d4a89bc04620d0687c2b84403b304539033
 
 
 function App() {
@@ -28,9 +31,12 @@ function App() {
 <ZoomIn />
 <PreviousExtend />
 <undefined />
+<<<<<<< HEAD
 <ProductFilter />
 <LayerSwitcher />
 <AttributeQuery />
+=======
+>>>>>>> 8a4e9d4a89bc04620d0687c2b84403b304539033
           </div>
         );
     };
