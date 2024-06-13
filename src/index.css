@@ -6,24 +6,38 @@
   font-size: 20px;
 }
 
+<<<<<<< HEAD
 .standard-button {
+=======
+#standard-button {
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
   background-color: #3498db;
   color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+<<<<<<< HEAD
   width: 40px;
   height: 36px;
 }
 
 .standard-button:hover {
+=======
+}
+
+#standard-button:hover {
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
   background-color: #2980b9;
 }
 
 .Toastify {
   top: 50%;
   left: 50%;
+<<<<<<< HEAD
 }
 div[title="S124 Navigational Warnings"]>button{
   padding: 5px !important;
 }
+=======
+}
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83

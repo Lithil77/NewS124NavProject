@@ -24,7 +24,11 @@ export const OLMapProvider = ({ children }) => {
 
     const [mapHeight, setMapHeight] = useState();
 
+<<<<<<< HEAD
     const [hamburgerMenuOpen, setHumburgerMenuOpen] = useState(true);
+=======
+    const [hamburgerMenuOpen, setHumburgerMenuOpen] = useState(false);
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
 
     const [previousExtend, setPreviousExtend] = useState([]);
     const [nextExtend, setNextExtend] = useState([]);

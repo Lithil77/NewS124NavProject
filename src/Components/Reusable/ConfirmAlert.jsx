@@ -30,7 +30,11 @@ const ConfirmAlert = ({ message, handleDelete }) => {
 
     return (
         <>
+<<<<<<< HEAD
             <Button className='ms-2' variant='danger' title='Delete' onClick={handleClick}> <i className='bi bi-trash'></i></Button>
+=======
+            <Button className='p-1' style={{ fontSize: '20px', width: '40px', height: '40px' }} variant='danger' title='Delete' onClick={handleClick}> <i className='bi bi-trash'></i></Button>
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
         </>
     );
 };

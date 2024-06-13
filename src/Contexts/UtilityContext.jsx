@@ -29,12 +29,15 @@ export const UtilityProvider = ({ children }) => {
         setAttributeQueryBottomTablePanelVisible(value)
     };
 
+<<<<<<< HEAD
     const [ActivewarnlistBottomTablePanelVisible, setActivewarnlistBottomTablePanelVisible] = useState(false);
 
     const updateActivewarnlistBottomTableVisible = (value) => {
         setActivewarnlistBottomTablePanelVisible(value)
     };
 
+=======
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
     const [collapsedQueryResultPanel, setCollapsedQueryResultPanel] = useState(false);
 
     const updateCollapsedQueryResultPanel = (value) => {
@@ -307,7 +310,11 @@ export const UtilityProvider = ({ children }) => {
 
                 updateCollapsedQueryResultPanel(true);
                 updateAttributeQueryBottomTablePanelVisible(false);
+<<<<<<< HEAD
                 updateProductFilterBottomTablePanelvisible(true);
+=======
+                updateProductFilterBottomTablePanelvisible(false);
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
                 updateProductFilterSideBarPanel(false);
 
             },
@@ -445,7 +452,10 @@ export const UtilityProvider = ({ children }) => {
                 searchInputloading, updateSearchInputloading, typeaheadRef, updateSelectedAttributeQueryOption,
                 selectedAttributeQueryOption, collapsedQueryResultPanel, updateCollapsedQueryResultPanel,
                 attributeQueryBottomTablePanelVisible, updateAttributeQueryBottomTablePanelVisible,
+<<<<<<< HEAD
                 ActivewarnlistBottomTablePanelVisible,updateActivewarnlistBottomTableVisible,
+=======
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
                 productFilterBottomTablePanelVisible, updateProductFilterBottomTablePanelvisible, logoFlag, updateLogoFlagValue,
                 productFilterSideBarPanel, updateProductFilterSideBarPanel, updates124NavWarningsSideBarPanel, s124NavWarningsSideBarPanel,
             }}>

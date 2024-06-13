@@ -1,5 +1,6 @@
 .layerlistAccord>.accordion-item>.accordion-header>.accordion-button {
     padding: 6px;
+<<<<<<< HEAD
     opacity:0.8;
 }
 .layerlistAccord{
@@ -19,3 +20,6 @@ background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
 .layerlistAccord>.accordion-item:nth-child(4)>.accordion-header> button {
 background: linear-gradient(135deg, #c3cfe2 0%, #c3cfe2 100%);
 } */
+=======
+}
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
