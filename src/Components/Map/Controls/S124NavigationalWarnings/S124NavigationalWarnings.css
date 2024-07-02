@@ -1,0 +1,106 @@
+.form-floating>label{
+    width: 100%;
+}
+.error_msg{
+    font-size: 12px;
+}
+div.arrowsteper{
+    width: auto;
+    line-height: 12px;
+    position:relative;
+    background: #c0d9ff;
+    text-align:center;
+    line-height: 20px;
+    cursor: pointer;
+}
+div.arrowsteper:after, div.arrowsteper:before{
+    content:"";
+    position:absolute;
+    width:20px;
+    height:50%;
+    left:100%;
+}
+div.arrowsteper:after{
+    bottom:0;
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 15px solid #c0d9ff;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    left: 100%;
+    z-index: 2;
+}
+div.arrowsteper:before{
+      top:0;
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 15px solid #759dd9;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1;
+}
+div.arrowsteper.active{
+    border-color: #1e3a8a !important;
+    color: #fff !important;
+    background: #1e3a8a !important;
+}
+div.arrowsteper.active:after{
+    border-left: 15px solid #1e3a8a !important;
+}
+
+#S124NavigationalWarnings>div>Svg>g{
+    fill: #fff;
+}
+#S124NavigationalWarnings>div>Svg>g:hover{
+    fill: #fff;
+}
+  .featureTable_attr>thead>tr>th {
+    word-break: break-all;
+    width: 3%;
+}
+
+.featureTable_attr>tbody>tr>td {
+    word-break: break-all;
+    width: 3%;
+}
+
+.fixed_header {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.fixed_header tbody {
+    display: block;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: auto;
+    height: auto;
+    min-height: 40px;
+    max-height: 146px;
+}
+
+.fixed_header thead tr,
+.fixed_header tbody tr {
+    display: block;
+}
+
+.fixed_header thead>tr>th,
+.fixed_header tbody>tr>td {
+    padding: 6px;
+    text-align: center;
+    font-size: 14px;
+    vertical-align: middle;
+}
