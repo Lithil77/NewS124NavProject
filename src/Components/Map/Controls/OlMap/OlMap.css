@@ -9,7 +9,15 @@
     width: 100%;
     padding: 0;
     transition: padding-right 0.3s;
+<<<<<<< HEAD
     overflow: hidden;
+=======
+<<<<<<< HEAD
+    overflow: hidden;
+=======
+    overflow-x: hidden;
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 }
 
 .map-container.active {
@@ -34,6 +42,7 @@
 
 .sideBar:not(.active) {
     transform: translateX(100%);
+<<<<<<< HEAD
 }
 
 .overlay {
@@ -78,3 +87,6 @@
     border-style: solid;
     border-color: #f0e9e9 transparent transparent transparent;
 } */
+=======
+}
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f

@@ -6,24 +6,54 @@
   font-size: 20px;
 }
 
+<<<<<<< HEAD
 .standard-button {
+=======
+<<<<<<< HEAD
+.standard-button {
+=======
+#standard-button {
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
   background-color: #3498db;
   color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
   width: 40px;
   height: 36px;
 }
 
 .standard-button:hover {
+<<<<<<< HEAD
+=======
+=======
+}
+
+#standard-button:hover {
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
   background-color: #2980b9;
 }
 
 .Toastify {
   top: 50%;
   left: 50%;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 }
 div[title="S124 Navigational Warnings"]>button{
   padding: 5px !important;
 }
+<<<<<<< HEAD
+=======
+=======
+}
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f

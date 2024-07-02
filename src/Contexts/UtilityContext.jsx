@@ -29,12 +29,21 @@ export const UtilityProvider = ({ children }) => {
         setAttributeQueryBottomTablePanelVisible(value)
     };
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     const [ActivewarnlistBottomTablePanelVisible, setActivewarnlistBottomTablePanelVisible] = useState(false);
 
     const updateActivewarnlistBottomTableVisible = (value) => {
         setActivewarnlistBottomTablePanelVisible(value)
     };
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     const [collapsedQueryResultPanel, setCollapsedQueryResultPanel] = useState(false);
 
     const updateCollapsedQueryResultPanel = (value) => {
@@ -70,7 +79,11 @@ export const UtilityProvider = ({ children }) => {
         SetAttributeQueryPanelVisible(value);
     }
 
+<<<<<<< HEAD
     const { olMap, stopDrawAction, clearVectorSource, mapOverlay } = useContext(OLMapContext);
+=======
+    const { olMap, stopDrawAction, clearVectorSource } = useContext(OLMapContext);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 
     const [isBaseMapWindowVisible, setIsBaseMapWindowVisible] = useState(false);
 
@@ -127,6 +140,7 @@ export const UtilityProvider = ({ children }) => {
     const updates124NavWarningsSideBarPanel = (value) => {
         sets124NavWarningsSideBarPanel(value);
     }
+<<<<<<< HEAD
 
     const [s124geometrytype, sets124GeometryType] = useState('');
 
@@ -145,6 +159,8 @@ export const UtilityProvider = ({ children }) => {
         setS124NavWarningDataSetFileIdentifier(value);
     }
 
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     const removeZoomWindowFunctionality = (olMap) => {
         if (dragBoxRef.current) {
             olMap.removeInteraction(dragBoxRef.current);
@@ -182,6 +198,7 @@ export const UtilityProvider = ({ children }) => {
             setClickHandlers([]);
         }
 
+<<<<<<< HEAD
         var buttons = document.querySelectorAll('.ZoomextentBtn');
         buttons.forEach(function (button) {
             button.classList.remove('active');
@@ -199,6 +216,8 @@ export const UtilityProvider = ({ children }) => {
             mapContainer.style.cursor = 'default';
         }
 
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
         const validTypes = ['productFilter', 'attributeQuery', 'FeatureInfo',
             'BaseMaps', 'Measure', 'ZoomWindow', 'Home', "other"];
 
@@ -216,6 +235,7 @@ export const UtilityProvider = ({ children }) => {
             }
         }
 
+<<<<<<< HEAD
     };
 
     const [featureInfoRecords, setFeatureInfoRecords] = useState([]);
@@ -224,6 +244,25 @@ export const UtilityProvider = ({ children }) => {
         setFeatureInfoRecords(records);
     }
 
+=======
+        let featureInfoBtn = document.getElementById("featureInfoBtn");
+
+        if (featureInfoBtn != null) {
+            featureInfoBtn.classList.remove('active');
+        }
+
+        var buttons = document.querySelectorAll('.ZoomextentBtn');
+        buttons.forEach(function (button) {
+            button.classList.remove('active');
+        });
+
+        let mapContainer = document.getElementById('map-container');
+        if (mapContainer) {
+            mapContainer.style.cursor = 'default';
+        }
+    };
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     const toggleComponent = (component, olMap) => {
         const componentActions = {
             "ZoomIn": () => {
@@ -259,6 +298,10 @@ export const UtilityProvider = ({ children }) => {
                 updateLayerSwitcherSideBarPanel(false);
                 updates124NavWarningsSideBarPanel(false);
                 clearAttributeQueryValues();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             },
             "previousExtend": () => {
                 unregisterFeatureInfoClickHandlers("previousExtend", olMap);
@@ -272,6 +315,10 @@ export const UtilityProvider = ({ children }) => {
                 updates124NavWarningsSideBarPanel(false);
                 clearAttributeQueryValues();
                 bottomTablePanelDisabled();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             },
             "NextExtend": () => {
                 unregisterFeatureInfoClickHandlers("NextExtend", olMap);
@@ -285,6 +332,10 @@ export const UtilityProvider = ({ children }) => {
                 updates124NavWarningsSideBarPanel(false);
                 clearAttributeQueryValues();
                 bottomTablePanelDisabled();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             },
             "ZoomWindow": () => {
                 unregisterFeatureInfoClickHandlers("ZoomWindow", olMap);
@@ -298,6 +349,10 @@ export const UtilityProvider = ({ children }) => {
                 clearAttributeQueryValues();
                 bottomTablePanelDisabled();
                 updateProductFilterSideBarPanel(false);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             },
             "BaseMaps": () => {
                 updateFeatureInfoSideBarPanel(false);
@@ -316,7 +371,10 @@ export const UtilityProvider = ({ children }) => {
                 clearAttributeQueryValues();
                 bottomTablePanelDisabled();
                 updateProductFilterSideBarPanel(false);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             },
             "FeatureInfo": () => {
                 updateIsBaseMapwindowVisible(false);
@@ -330,8 +388,18 @@ export const UtilityProvider = ({ children }) => {
 
                 updateCollapsedQueryResultPanel(true);
                 updateAttributeQueryBottomTablePanelVisible(false);
+<<<<<<< HEAD
                 updateProductFilterBottomTablePanelvisible(true);
                 updateProductFilterSideBarPanel(false);
+=======
+<<<<<<< HEAD
+                updateProductFilterBottomTablePanelvisible(true);
+=======
+                updateProductFilterBottomTablePanelvisible(false);
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+                updateProductFilterSideBarPanel(false);
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             },
             "layerSwitcher": () => {
                 updateLayerSwitcherSideBarPanel(true);
@@ -341,7 +409,13 @@ export const UtilityProvider = ({ children }) => {
                 stopDrawAction();
                 updateFeatureInfoFlag(false);
                 removeZoomWindowFunctionality(olMap);
+<<<<<<< HEAD
 
+=======
+                /*
+                updateFeatureInfoSideBarPanel(false);
+               */
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                 updateProductFilterSideBarPanel(false);
                 updates124NavWarningsSideBarPanel(false);
             },
@@ -382,9 +456,12 @@ export const UtilityProvider = ({ children }) => {
                 updateAttributeQueryPanelVisible(true);
                 updateProductFilterBottomTablePanelvisible(false);
                 updateProductFilterSideBarPanel(false);
+<<<<<<< HEAD
                 if (attributeQueryPanelVisible && mapOverlay) {
                     olMap.addOverlay(mapOverlay);
                 }
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             },
             "Measure": () => {
                 updateFeatureInfoSideBarPanel(false);
@@ -439,10 +516,13 @@ export const UtilityProvider = ({ children }) => {
 
     const clearAttributeQueryValues = () => {
         updateAttributeQueryPanelVisible(false);
+<<<<<<< HEAD
 
         if (attributeQueryPanelVisible == false) {
             olMap.removeOverlay(mapOverlay);
         }
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
         if (typeaheadRef.current) {
             typeaheadRef.current.clear();
         }
@@ -472,12 +552,21 @@ export const UtilityProvider = ({ children }) => {
                 searchInputloading, updateSearchInputloading, typeaheadRef, updateSelectedAttributeQueryOption,
                 selectedAttributeQueryOption, collapsedQueryResultPanel, updateCollapsedQueryResultPanel,
                 attributeQueryBottomTablePanelVisible, updateAttributeQueryBottomTablePanelVisible,
+<<<<<<< HEAD
                 ActivewarnlistBottomTablePanelVisible, updateActivewarnlistBottomTableVisible,
                 activeKey, updates124activekey, updateS124NavWarningDataSetFileIdentifier, s124NavWarningDataSetFileIdentifier,
                 s124geometrytype,updates124GeometryType,
                 productFilterBottomTablePanelVisible, updateProductFilterBottomTablePanelvisible, logoFlag, updateLogoFlagValue,
                 productFilterSideBarPanel, updateProductFilterSideBarPanel, updates124NavWarningsSideBarPanel, s124NavWarningsSideBarPanel,
                 updateFeatureInfoRecords, featureInfoRecords
+=======
+<<<<<<< HEAD
+                ActivewarnlistBottomTablePanelVisible,updateActivewarnlistBottomTableVisible,
+=======
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+                productFilterBottomTablePanelVisible, updateProductFilterBottomTablePanelvisible, logoFlag, updateLogoFlagValue,
+                productFilterSideBarPanel, updateProductFilterSideBarPanel, updates124NavWarningsSideBarPanel, s124NavWarningsSideBarPanel,
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             }}>
                 {children}
             </UtilityContext.Provider>

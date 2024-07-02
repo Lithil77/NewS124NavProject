@@ -3,10 +3,18 @@ import { useUtility } from '../../../../Contexts/UtilityContext';
 import { OLMapContext } from '../../../../Contexts/OlMapContext';
 import { CloseButton, StyledMapControlButton, StyledReactPaginateComp } from '../../../Reusable/StyledComponent';
 import { Table, Card, Stack, Container } from "react-bootstrap";
+<<<<<<< HEAD
 import Pagination from 'react-bootstrap/Pagination';
 import ImageWMS from "ol/source/ImageWMS.js";
 import ImageLayer from "ol/layer/Image.js";
 import { S124NavWarningGroupLayer, nodeServerUrl } from '../../../../appConfig';
+=======
+import { toast } from 'react-toastify';
+import Pagination from 'react-bootstrap/Pagination';
+import ImageWMS from "ol/source/ImageWMS.js";
+import ImageLayer from "ol/layer/Image.js";
+import { nodeServerUrl } from '../../../../appConfig';
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 import axios from 'axios';
 import { useColor } from '../../../../Contexts/ColorContext';
 import './FeatureInfo.css';
@@ -14,15 +22,26 @@ import './FeatureInfo.css';
 function FeatureInfo() {
 
     const [title] = useState('FeatureInfo');
+<<<<<<< HEAD
     const { olMap, clearVectorSource, stopDrawAction, renderHighlightedFeatures, overlayRef, updateOverLayVisibility ,attributeoverlayRef,updateAttrOverLayVisibility} = useContext(OLMapContext);
+=======
+    const { olMap, clearVectorSource, stopDrawAction, renderHighlightedFeatures } = useContext(OLMapContext);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     const { backgroundColor, textColor, borderColor, fontFamily } = useColor();
 
     const sidebarHeight = window.innerHeight;
 
     const { featureInfoFlag, updateFeatureInfoFlag, registerFeatureInfoClickHandler,
+<<<<<<< HEAD
         unregisterFeatureInfoClickHandlers, toggleComponent, updateFeatureInfoRecords, featureInfoRecords,
         attributeQueryPanelVisible, s124NavWarningsSideBarPanel, attributeQuerySelectedLayer, updateS124NavWarningDataSetFileIdentifier ,s124geometrytype} = useUtility();
 
+=======
+        unregisterFeatureInfoClickHandlers, toggleComponent, updateCollapsedQueryResultPanel,
+        updateProductFilterBottomTablePanelvisible } = useUtility();
+
+    const [uniqueFeatureRecords, setUniqueFeatureRecords] = useState([]);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     const [featuresGeometry, setFeaturesGeometry] = useState([]);
     const [layerName, setLayerName] = useState(null);
 
@@ -32,7 +51,11 @@ function FeatureInfo() {
     const lastIndex = currentPage * recordsPerPage;
     const firstIndex = lastIndex - recordsPerPage;
     const [records, setRecords] = useState([]);
+<<<<<<< HEAD
     const numberOfPages = Math.ceil(featureInfoRecords.length / recordsPerPage);
+=======
+    const numberOfPages = Math.ceil(uniqueFeatureRecords.length / recordsPerPage);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     const pageNumbers = Array.from({ length: numberOfPages }, (_, i) => i + 1);
 
     useEffect(() => {
@@ -64,20 +87,35 @@ function FeatureInfo() {
     useEffect(() => {
         setCurrentPage(1);
 
+<<<<<<< HEAD
         if (featureInfoRecords.length > 0) {
             setRecords([]);
             setColumns(Object.keys(featureInfoRecords[0]));
             var data = featureInfoRecords.slice(firstIndex, lastIndex);
+=======
+        if (uniqueFeatureRecords.length > 0) {
+            setRecords([]);
+            setColumns(Object.keys(uniqueFeatureRecords[0]));
+            var data = uniqueFeatureRecords.slice(firstIndex, lastIndex);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             setRecords(data);
         } else {
             setColumns([]);
         }
+<<<<<<< HEAD
     }, [featureInfoRecords]);
+=======
+    }, [uniqueFeatureRecords]);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 
     const handleFeatureInfo = () => {
         toggleComponent(title, olMap);
         setFeaturesGeometry([]);
+<<<<<<< HEAD
         updateFeatureInfoRecords([]);
+=======
+        setUniqueFeatureRecords([]);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
         setColumns([]);
         setLayerName(null);
         setRecords([]);
@@ -102,6 +140,7 @@ function FeatureInfo() {
             }
         }
     }
+<<<<<<< HEAD
     useEffect(() => {
          if (s124NavWarningsSideBarPanel) {
             
@@ -169,6 +208,14 @@ function FeatureInfo() {
         stopDrawAction();
         setRecords([]);
         updateFeatureInfoRecords([]);
+=======
+
+    const handleMapClick = async (event) => {
+        clearVectorSource();
+        stopDrawAction();
+        setRecords([]);
+        setUniqueFeatureRecords([]);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
         var allfeaturesList = [];
         var layers = olMap.getLayers().getArray();
 
@@ -186,6 +233,7 @@ function FeatureInfo() {
                             FEATURE_COUNT: 20
                         });
 
+<<<<<<< HEAD
                     if (featureUrl) {
 
                         const queryParams = { param: featureUrl };
@@ -208,16 +256,34 @@ function FeatureInfo() {
                                        // updateS124NavWarningDataSetFileIdentifier(res.data.features[index].dataset_file_identifier);
                                     }
 
+=======
+                    console.log("featureUrl", featureUrl);
+
+                    if (featureUrl) {
+                        const queryParams = { param: featureUrl };
+                        try {
+                            const res = await axios.get(`${nodeServerUrl}/getFeatureInfo`, { params: queryParams });
+                            console.log(res);
+                            if (res.data.features) {
+                                let lyrTitle = lyr.get('title');
+                                setFeaturesGeometry(res.data.features);
+                                for (let index = 0; index < res.data.features.length; index++) {
+                                    let properties = res.data.features[index].properties;
+                                    properties.layerName = lyrTitle;
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                                     allfeaturesList.push(properties);
                                 }
                             }
 
                             if (allfeaturesList.length > 0) {
+<<<<<<< HEAD
 
                                 res.data.features.forEach((feature, index) => {
                                     updateS124NavWarningDataSetFileIdentifier(res.data.features[index]?.properties.dataset_file_identifier);
                                 });
 
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                                 const vectorLayer = renderHighlightedFeatures(res.data);
                                 var extent = vectorLayer.getSource().getExtent();
                                 olMap.getView().fit(extent, {
@@ -225,6 +291,7 @@ function FeatureInfo() {
                                     duration: 1000
                                 });
                                 olMap.addLayer(vectorLayer);
+<<<<<<< HEAD
                                 updateFeatureInfoRecords(allfeaturesList);
                             }
                             else {
@@ -233,6 +300,13 @@ function FeatureInfo() {
 
                         } catch (error) {
                             console.log(error);
+=======
+                                setUniqueFeatureRecords(allfeaturesList);
+                            }
+
+                        } catch (error) {
+                            toast.warn('Error fetching features:', error);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                         }
                     }
                 }
@@ -241,11 +315,20 @@ function FeatureInfo() {
 
         setTimeout(() => {
 
+<<<<<<< HEAD
             if (allfeaturesList.length < 0) {
                 setLayerName(allfeaturesList[0].layerName);;
             }
         }, 500)
     }
+=======
+            if (allfeaturesList.length > 0) {
+                setLayerName(allfeaturesList[0].layerName);
+            }
+
+        }, 500)
+    };
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 
     const renderPageNumbers = () => {
         const visiblePages = 4;
@@ -297,8 +380,13 @@ function FeatureInfo() {
             const endIndex = startIndex + recordsPerPage;
             const newRecords = [];
 
+<<<<<<< HEAD
             for (let i = startIndex; i < endIndex && i < featureInfoRecords.length; i++) {
                 newRecords.push(featureInfoRecords[i]);
+=======
+            for (let i = startIndex; i < endIndex && i < uniqueFeatureRecords.length; i++) {
+                newRecords.push(uniqueFeatureRecords[i]);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             }
 
             setRecords(newRecords);

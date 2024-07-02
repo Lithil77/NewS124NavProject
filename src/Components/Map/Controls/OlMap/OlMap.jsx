@@ -6,17 +6,27 @@ import OSM from 'ol/source/OSM';
 import { OLMapContext } from '../../../../Contexts/OlMapContext.jsx';
 import HumburgerMenu from '../../../utils/HumburgerMenu.jsx';
 import './OlMap.css';
+<<<<<<< HEAD
 import { S124NavWarningGroupLayer, nodeServerUrl } from '../../../../appConfig.js';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { Col, Container, Row } from 'react-bootstrap';
+=======
+import { nodeServerUrl } from '../../../../appConfig.js';
+import { toast } from 'react-toastify';
+import axios from 'axios';
+import { Container } from 'react-bootstrap';
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 import { useUtility } from '../../../../Contexts/UtilityContext.jsx';
 import { useParams } from "react-router-dom";
 import { useColor } from '../../../../Contexts/ColorContext.jsx';
 import { mapLayers } from '../../../../Utils/layersDataConfig.js';
 import { id, isBuilder, olMapHeight } from '../../../../Utils/AppDetails.jsx';
+<<<<<<< HEAD
 import Overlay from 'ol/Overlay';
 import { CloseButton, StyledButton } from '../../../Reusable/StyledComponent.jsx';
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 
 function OlMap() {
 
@@ -24,16 +34,26 @@ function OlMap() {
 
     const selectedProjectId = routeProjectId === undefined ? id : routeProjectId;
 
+<<<<<<< HEAD
     const { olMap, mapHeight, ConfigWMSLayerToMap, overlayRef, overlayVisible, updateOverLayVisibility, updateMapOverlay, attributeoverlayRef,updateAttributeMapOverlay,attroverlayVisible} = useContext(OLMapContext);
 
     const { featureInfoSideBarPanel, layerSwitcherSideBarPanel,
         productFilterSideBarPanel, s124NavWarningsSideBarPanel, updateFeatureInfoSideBarPanel,
         attributeQueryPanelVisible, updates124NavWarningsSideBarPanel, updates124activekey, attributeQuerySelectedLayer,s124geometrytype} = useUtility();
 
+=======
+    const { olMap, mapHeight, ConfigWMSLayerToMap } = useContext(OLMapContext);
+    const { featureInfoSideBarPanel, layerSwitcherSideBarPanel,
+        productFilterSideBarPanel, s124NavWarningsSideBarPanel } = useUtility();
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     const { fetchAndCreateProperty, getPropertyBasedOnProjectId } = useColor();
 
     const mapRef = useRef(null);
     const [layersData, setLayersData] = useState(null);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     useEffect(() => {
         if (olMap) {
             var view = new View({
@@ -58,6 +78,7 @@ function OlMap() {
 
 
     useEffect(() => {
+<<<<<<< HEAD
         let mapOverlay = null;
 
         if (s124NavWarningsSideBarPanel) {
@@ -118,6 +139,8 @@ function OlMap() {
 
 
     useEffect(() => {
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 
         const fetchData = async () => {
             try {
@@ -159,6 +182,7 @@ function OlMap() {
         }
     }, [layersData]);
 
+<<<<<<< HEAD
     const handlePopoverClose = () => {
         updateOverLayVisibility(false);
         updateFeatureInfoSideBarPanel(false);
@@ -182,11 +206,14 @@ function OlMap() {
         
     }
 
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     return (
         <Container fluid className='main-content px-0'>
             <div ref={mapRef} id="map-container" style={{ height: `${mapHeight ? `${mapHeight}px` : `${olMapHeight}px`}` }} className={`map-container ${featureInfoSideBarPanel || layerSwitcherSideBarPanel || s124NavWarningsSideBarPanel || productFilterSideBarPanel ? 'active' : ''}`} >
                 <HumburgerMenu></HumburgerMenu>
             </div>
+<<<<<<< HEAD
             <div ref={overlayRef} className="overlay" style={{ display: overlayVisible ? 'block' : 'none' }}>
                 <span>
                     <CloseButton onClick={handlePopoverClose} className='ms-auto'>
@@ -217,6 +244,8 @@ function OlMap() {
                     </Col>
                 </Row>
             </div>
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             <div id='featureInfoSidebar' className={`sideBar ${featureInfoSideBarPanel ? 'active' : ''}`} style={{ display: featureInfoSideBarPanel ? 'block' : 'none' }} ></div>
             <div id='layerSwitcherInfoSidebar' className={`sideBar ${layerSwitcherSideBarPanel ? 'active' : ''}`} style={{ display: layerSwitcherSideBarPanel ? 'block' : 'none' }}></div>
             <div id='productFilterInfoSidebar' className={`sideBar ${productFilterSideBarPanel ? 'active' : ''}`} style={{ display: productFilterSideBarPanel ? 'block' : 'none' }}></div>

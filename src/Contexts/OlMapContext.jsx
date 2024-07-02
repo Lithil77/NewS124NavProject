@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useEffect, useState, createContext, useRef } from 'react';
+=======
+import React, { useEffect, useState, createContext } from 'react';
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 import 'ol/ol.css';
 import Map from 'ol/Map';
 import { defaults as defaultInteractions, Pointer as PointerInteraction } from 'ol/interaction';
@@ -24,7 +28,15 @@ export const OLMapProvider = ({ children }) => {
 
     const [mapHeight, setMapHeight] = useState();
 
+<<<<<<< HEAD
     const [hamburgerMenuOpen, setHumburgerMenuOpen] = useState(true);
+=======
+<<<<<<< HEAD
+    const [hamburgerMenuOpen, setHumburgerMenuOpen] = useState(true);
+=======
+    const [hamburgerMenuOpen, setHumburgerMenuOpen] = useState(false);
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 
     const [previousExtend, setPreviousExtend] = useState([]);
     const [nextExtend, setNextExtend] = useState([]);
@@ -35,6 +47,7 @@ export const OLMapProvider = ({ children }) => {
         setLayerAdded(value);
     }
 
+<<<<<<< HEAD
     const overlayRef = useRef(null);
     const attributeoverlayRef=useRef(null);
 
@@ -62,6 +75,8 @@ export const OLMapProvider = ({ children }) => {
         setAttrOverlayVisible(value)
     }
 
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     useEffect(() => {
         const olMap = new Map({
             controls: [],
@@ -165,6 +180,7 @@ export const OLMapProvider = ({ children }) => {
     };
 
 
+<<<<<<< HEAD
     const renderWarningHighlightedFeatures = (data) => {
         const vectorLayer = createStylingVectorLayerWithStyles();
 
@@ -237,6 +253,8 @@ export const OLMapProvider = ({ children }) => {
         return vectorLayer;
     };
 
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     const hexToRgba = (hex, alpha) => {
         const hexColor = hex.replace('#', '');
         const r = parseInt(hexColor.substring(0, 2), 16);
@@ -349,9 +367,14 @@ export const OLMapProvider = ({ children }) => {
                 hamburgerMenuOpen, toggleHumburgerMenu,
                 updatePreviousExtend, updateNextExtend, previousExtend, nextExtend,
                 hightLightSelectedFeature, clearImageSource, clearVectorSource,
+<<<<<<< HEAD
                 renderHighlightedFeatures, stopDrawAction, ConfigWMSLayerToMap, renderWarningHighlightedFeatures,
                 updateIsLayerAdded, islayerAdded, getAllVisibleLayers, getTargetLayer, overlayRef,attributeoverlayRef,
                 updateOverLayVisibility, overlayVisible, updateMapOverlay, mapOverlay,updateAttributeMapOverlay,attributemapOverlay,updateAttrOverLayVisibility,attroverlayVisible
+=======
+                renderHighlightedFeatures, stopDrawAction, ConfigWMSLayerToMap,
+                updateIsLayerAdded, islayerAdded, getAllVisibleLayers, getTargetLayer,
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             }}>
                 {children}
             </OLMapContext.Provider>

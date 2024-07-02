@@ -2,9 +2,12 @@ import React, { createContext, useContext, useState } from 'react';
 import ImageWMS from 'ol/source/ImageWMS.js';
 import ImageLayer from 'ol/layer/Image.js';
 import { toast } from 'react-toastify';
+<<<<<<< HEAD
 import axios from 'axios';
 import { nodeServerUrl } from '../appConfig';
 
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 
 export const ProductFilterContext = createContext();
 
@@ -171,7 +174,10 @@ export const ProductFilterProvider = ({ children }) => {
             setPointButtonVisible(true);
             setRtzButtonVisible(true);
             setCalenderBtnVisible(false);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
         }
     }
 
@@ -240,6 +246,10 @@ export const ProductFilterProvider = ({ children }) => {
         let layerUrl;
         if (olMap) {
             const layersList = olMap.getLayers().getArray();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             const targetLayer = layersList.find(lyr =>
                 lyr instanceof ImageLayer &&
                 lyr.getSource() instanceof ImageWMS &&
@@ -277,6 +287,7 @@ export const ProductFilterProvider = ({ children }) => {
         setCalenderBtnVisible(false);
     }
 
+<<<<<<< HEAD
     async function getLayersFromLayerGroup(geoserverUrl, selectedMapLayer) {
 
         const url = new URL(geoserverUrl);
@@ -539,6 +550,8 @@ export const ProductFilterProvider = ({ children }) => {
             return [];
         }
     };
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     return (
         <ProductFilterContext.Provider value={{
             selectedMapLayer, updateSelectedMapLayer,
@@ -556,9 +569,13 @@ export const ProductFilterProvider = ({ children }) => {
             pointButtonActive, setPointButtonActive, rtzButtonActive, setRtzButtonActive, toggleGeometryButtons,
             flag, setFlag, unableBtns, clearSomeFields, enableGeomertyContainer, SetEnableGeomertyContainer,
             enableGeomertyButtonsOnCountrySelection, deactiveGeometryBtns, updateFeatureData, featureData, clearFeatureData,
+<<<<<<< HEAD
             headers, updateHeader, makeInitialState, showGeometryClearDialog, setShowGeometryClearDialog,
             getLayersFromLayerGroup, getS124NavigationalWarningTypes, getS124NavWarnDataSetIDs, getS124NavigationalGeometryTypes,
             getS124NavWarnPublicationDates, getDataSetIdsForAttributeQuery
+=======
+            headers, updateHeader, makeInitialState, showGeometryClearDialog, setShowGeometryClearDialog
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
         }}>
             {children}
         </ProductFilterContext.Provider>

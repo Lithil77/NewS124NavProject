@@ -29,6 +29,10 @@ const HumburgerMenu = () => {
                     </ListGroup>
                 </div>
                 <Collapse in={hamburgerMenuOpen}>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                     <div id="mapControlsNavbar" className='position-absolute end-0' style={{ transition: 'all 0.5s' }}>
                         <ListGroup className='d-flex flex-column mt-5 w-auto mx-1 position-absolute end-0' style={{ zIndex: '99', top: '5px' }}>
                             <ListGroup.Item id="homeButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
@@ -44,6 +48,26 @@ const HumburgerMenu = () => {
                             <ListGroup.Item id="s124NavWarningsButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
                             <ListGroup.Item id="layerswitcherButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
                         </ListGroup>
+<<<<<<< HEAD
+=======
+=======
+                    <div id="mapControlsNavbar" className='position-absolute end-0' style={{transition: 'all 0.5s'}}>
+                    <ListGroup className='d-flex flex-column mt-5 w-auto mx-1 position-absolute end-0' style={{ zIndex: '99', top: '5px' }}>
+                        <ListGroup.Item id="homeButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
+                        <ListGroup.Item id="zoomInButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
+                        <ListGroup.Item id="zoomOutButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
+                        <ListGroup.Item id="previousExtendButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
+                        <ListGroup.Item id="nextExtendButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
+                        <ListGroup.Item id="zoomWindowButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
+                        <ListGroup.Item id="featureInfoButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
+                        <ListGroup.Item id="measureButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
+                        <ListGroup.Item id="baseMapsButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
+                        <ListGroup.Item id="productFilterButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
+                         <ListGroup.Item id="s124NavWarningsButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
+                        <ListGroup.Item id="layerswitcherButtonList" className='p-0 border-0' style={{ backgroundColor: 'transparent' }}></ListGroup.Item>
+                    </ListGroup>
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                     </div>
                 </Collapse>
                 <ListGroup className='d-flex flex-column position-absolute ms-1 w-100' style={{ zIndex: '99', top: '5px' }}>

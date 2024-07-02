@@ -11,6 +11,7 @@ import { Typeahead } from 'react-bootstrap-typeahead';
 import { attributeQueryByOption, getAttributeQueryValues } from '../../../../GeoServerUtils/attributeQuery';
 import BottomTable from '../../../Reusable/BottomTable';
 import './AttributeQuery.css';
+<<<<<<< HEAD
 import { S1412windLayer, S124NavWarningGroupLayer } from '../../../../appConfig';
 import { useProductFilter } from '../../../../Contexts/ProductFilterContext';
 
@@ -18,13 +19,23 @@ function AttributeQuery() {
 
     const { getDataSetIdsForAttributeQuery, getQueryLayerUrl, getLayersFromLayerGroup } = useProductFilter();
 
+=======
+import { S1412windLayer } from '../../../../appConfig';
+
+function AttributeQuery() {
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     const { olMap, getAllVisibleLayers, getTargetLayer, hightLightSelectedFeature, clearVectorSource } = useContext(OLMapContext);
 
     const { attributeQueryPanelVisible, updateAttributeQueryPanelVisible, attributeQuerySelectedLayer,
         updateAttributeQuerySelectedLayer, featureSearchResults, updateFeatureSearchResults, clearFeatureSearchResults,
         searchInputloading, updateSearchInputloading, typeaheadRef, updateSelectedAttributeQueryOption,
         selectedAttributeQueryOption, toggleComponent,
+<<<<<<< HEAD
         updateCollapsedQueryResultPanel, updateAttributeQueryBottomTablePanelVisible, updateFeatureInfoRecords } = useUtility();
+=======
+        updateCollapsedQueryResultPanel, updateAttributeQueryBottomTablePanelVisible } = useUtility();
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 
     const { backgroundColor, borderColor, typoColor, textColor } = useColor();
 
@@ -36,9 +47,12 @@ function AttributeQuery() {
     const [headers, setHeaders] = useState([]);
     const [selectedFeatureData, setSelectedFeatureData] = useState([]);
 
+<<<<<<< HEAD
     const [groupLayers, setGroupLayers] = useState([]);
 
 
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     useEffect(() => {
         if (olMap) {
             const mapContainer = document.getElementById('map-container');
@@ -56,6 +70,7 @@ function AttributeQuery() {
         }
     }, [olMap]);
 
+<<<<<<< HEAD
     useEffect(() => {
         if (attributeQuerySelectedLayer !== '') {
             setTimeout(async () => {
@@ -82,6 +97,19 @@ function AttributeQuery() {
                     updateAttributeQueryPanelVisible(false);
                 }
 
+=======
+
+    useEffect(() => {
+        if (attributeQuerySelectedLayer !== '') {
+            setTimeout(async () => {
+                updateSearchInputloading(true);
+                const arributesData = await getAttributeQueryValues(targetUrl, attributeQuerySelectedLayer);
+                updateSearchInputloading(false);
+                if (arributesData.length > 0) {
+                    updateFeatureSearchResults(arributesData);
+                }
+                updateAttributeQueryPanelVisible(false);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             }, 1000);
         }
     }, [attributeQuerySelectedLayer]);
@@ -151,8 +179,13 @@ function AttributeQuery() {
             updateSelectedAttributeQueryOption(selectedOption);
             clearVectorSource();
             setSelectedFeatureData([]);
+<<<<<<< HEAD
             const data = await attributeQueryByOption(olMap, targetUrl, lyrName, selectedOption, hightLightSelectedFeature, groupLayers);
             if (data.length > 0 && attributeQuerySelectedLayer !== S124NavWarningGroupLayer) {
+=======
+            const data = await attributeQueryByOption(olMap, targetUrl, lyrName, selectedOption, hightLightSelectedFeature);
+            if (data.length > 0) {
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                 setSelectedFeatureData(data);
                 const headings = Object.keys(data[0]);
                 setHeaders(headings);
@@ -223,6 +256,7 @@ function AttributeQuery() {
                                             id="searchBox"
                                             labelKey="combinedLabel"
                                             onChange={handleSelect}
+<<<<<<< HEAD
                                             placeholder={
                                                 attributeQuerySelectedLayer === S124NavWarningGroupLayer
                                                     ? 'Data Set'
@@ -231,6 +265,9 @@ function AttributeQuery() {
                                                         : 'Id'
                                             }
 
+=======
+                                            placeholder={attributeQuerySelectedLayer != S1412windLayer ? `Product Id, Feature Name, Chart Number, Country or Location` : 'Id'}
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                                             options={featureSearchResults}
                                             ref={typeaheadRef}
                                             className="custom-typeahead"
@@ -247,7 +284,10 @@ function AttributeQuery() {
                                             )}
                                         </InputGroup.Text>
                                     </InputGroup>
+<<<<<<< HEAD
                                     {selectedAttributeQueryOption !== null ? <p>Please select the feature to view details</p> : <></>}
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                                 </Form>
                             }
                         </div>

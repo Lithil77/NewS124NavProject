@@ -1,5 +1,9 @@
 import axios from 'axios';
+<<<<<<< HEAD
 import { S124NavWarningGroupLayer, S1412windLayer, nodeServerUrl } from '../appConfig';
+=======
+import { nodeServerUrl } from '../appConfig';
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 import { toast } from 'react-toastify';
 
 export const getAttributeQueryValues = async (targetUrl, lyrName) => {
@@ -54,6 +58,7 @@ export const getAttributeQueryValues = async (targetUrl, lyrName) => {
 };
 
 
+<<<<<<< HEAD
 export const attributeQueryByOption = async (olMap, targetUrl, lyrName, selectedOption, hightLightSelectedFeature, groupLayers) => {
     let featureData = [];
     var baseUrl;
@@ -61,13 +66,24 @@ export const attributeQueryByOption = async (olMap, targetUrl, lyrName, selected
     if (targetUrl) {
 
         if (lyrName !== S1412windLayer && lyrName !== S124NavWarningGroupLayer) {
+=======
+export const attributeQueryByOption = async (olMap, targetUrl, lyrName, selectedOption, hightLightSelectedFeature) => {
+    let featureData = [];
+    var baseUrl;
+    if (targetUrl) {
+
+        if (lyrName !== 'S-1412') {
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             const { chartnumber, featurename, producercode, productName } = selectedOption;
 
             const propertyName = 'producercode,country_code,producttype,featurename,chartnumber,compilationscale,polygon';
             const outputFormat = 'application/json';
             const cqlFilter = `chartnumber='${chartnumber}' AND product='${productName}' AND producercode='${producercode}' AND featurename='${featurename}'`;
             baseUrl = `${targetUrl}?service=WFS&version=1.1.0&request=GetFeature&typename=${lyrName}&outputFormat=${outputFormat}&cql_filter=${encodeURIComponent(cqlFilter)}&propertyName=${propertyName}`;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
         } else {
             const { Id } = selectedOption;
             baseUrl = `${targetUrl}?service=WFS&version=1.1.0&request=GetFeature&typename=${lyrName}&outputFormat=application/json&cql_filter=ID='${Id}'`;
@@ -75,6 +91,7 @@ export const attributeQueryByOption = async (olMap, targetUrl, lyrName, selected
 
         const queryParams = { param: baseUrl };
 
+<<<<<<< HEAD
 
         if (lyrName !== S124NavWarningGroupLayer) {
             try {
@@ -138,6 +155,29 @@ export const attributeQueryByOption = async (olMap, targetUrl, lyrName, selected
     } else {
         toast.warn(`Layer '${lyrName}' not found.`);
     }
+=======
+        try {
+            const resultData = await axios.get(`${nodeServerUrl}/getAttributeQueryValues`, { params: queryParams });
+
+            if (resultData?.data?.features?.length > 0) {
+                const targetOverlay = olMap.getOverlays().getArray()[0];
+                if (targetOverlay) {
+                    targetOverlay.setPosition(undefined);
+                }
+                hightLightSelectedFeature(olMap, resultData.data);
+                featureData.push(resultData.data.features[0].properties);
+
+            } else {
+                toast.warn('No features found for the selected option.');
+            }
+        } catch (error) {
+            toast.warn('Error fetching data using attrubute query option.');
+        }
+    } else {
+        toast.warn(`Layer '${lyrName}' not found.`);
+    }
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     return featureData;
 };
 

@@ -5,7 +5,11 @@ import { useProductFilter } from '../../../../../Contexts/ProductFilterContext';
 import { OLMapContext } from '../../../../../Contexts/OlMapContext';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+<<<<<<< HEAD
 import { S124NavWarningGroupLayer, S1412windLayer, nodeServerUrl } from '../../../../../appConfig';
+=======
+import { S1412windLayer, nodeServerUrl } from '../../../../../appConfig';
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 import { findImageLayerByTitle } from '../../../../../OpenLayersUtils/OpenLayers';
 
 function Product() {
@@ -39,10 +43,17 @@ function Product() {
                         .filter(code => code !== null && code !== undefined && code !== '')
                 );
                 agencyCodes.push(...producerCodes);
+<<<<<<< HEAD
             } else {
                 if (layerName !== S1412windLayer && layerName !== S124NavWarningGroupLayer) {
                     toast.warn(`There are no agency codes available in code geoserver for this ${layerName}`);
                 }
+=======
+
+                console.log('agencyCodes: ', agencyCodes)
+            } else {
+                toast.warn(`There are no agency codes available in code geoserver for this ${layerName}`);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             }
         } catch (error) {
             toast.warn(`Fetching error for agency codes from geoserver for this ${layerName}`);
@@ -51,6 +62,10 @@ function Product() {
         return agencyCodes;
     };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     const handleChangeProduct = async (event) => {
         if (event.target.value !== 'select') {
             setShowCalendarDialog(false);
@@ -83,8 +98,13 @@ function Product() {
             updateIsLoading(false);
 
             if (agencyCodes.length == 0) {
+<<<<<<< HEAD
                 if (selectedLayer !== S1412windLayer && selectedLayer !== S124NavWarningGroupLayer) {
                     toast.warn(`No agency codes are available for ${selectedMapLayer}`);
+=======
+                if (selectedLayer !== S1412windLayer) {
+                    toast.warn(`No agency codes are available for ${lyrName}`);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                 }
             }
             else {

@@ -1,7 +1,17 @@
 import styled from 'styled-components';
+<<<<<<< HEAD
 import { Popover, Button, Pagination, Accordion } from 'react-bootstrap';
 
 
+=======
+<<<<<<< HEAD
+import { Popover, Button, Pagination, Accordion } from 'react-bootstrap';
+
+
+=======
+import { Popover, Button, Pagination } from 'react-bootstrap';
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 
 const StyledButton = styled(Button)`
     background-color: ${props => props.theme.backgroundColor};

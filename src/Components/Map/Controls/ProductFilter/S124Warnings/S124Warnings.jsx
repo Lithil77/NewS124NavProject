@@ -1,18 +1,29 @@
+<<<<<<< HEAD
 import React, { useContext, useState, useRef, useEffect } from 'react';
+=======
+import React, { useContext, useState, useRef } from 'react';
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 import ImageWMS from "ol/source/ImageWMS.js";
 import ImageLayer from "ol/layer/Image.js";
 import { Col, FloatingLabel, Form, Overlay, Popover, Row } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import { useColor } from '../../../../../Contexts/ColorContext';
 import 'react-datepicker/dist/react-datepicker.css';
+<<<<<<< HEAD
 import { StyledButton, StyledLoaderInner, StyledLoaderWraper } from '../../../../Reusable/StyledComponent';
 import { useProductFilter } from '../../../../../Contexts/ProductFilterContext';
 import { OLMapContext } from '../../../../../Contexts/OlMapContext';
 import { toast } from 'react-toastify';
+=======
+import { StyledButton } from '../../../../Reusable/StyledComponent';
+import { useProductFilter } from '../../../../../Contexts/ProductFilterContext';
+import { OLMapContext } from '../../../../../Contexts/OlMapContext';
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 
 function S124Warnings() {
 
     const { olMap } = useContext(OLMapContext);
+<<<<<<< HEAD
     const { selectedMapLayer, getS124NavigationalWarningTypes, getS124NavWarnDataSetIDs,
         getS124NavigationalGeometryTypes, getS124NavWarnPublicationDates } = useProductFilter();
 
@@ -26,6 +37,13 @@ function S124Warnings() {
 
     const [selectedStartDate, setSelectedStartDate] = useState(null);
     const [selectedEndDate, setSelectedEndDate] = useState(null);
+=======
+    const { selectedMapLayer } = useProductFilter();
+    const [selectedNavigationWarningType, setSelectedNavigationWarningType] = useState('select');
+    const [selectedStartDate, setSelectedStartDate] = useState(new Date());
+    const [selectedEndDate, setSelectedEndDate] = useState(new Date());
+    const { backgroundColor, textColor, borderColor } = useColor();
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 
     const [startdateCalenderBtnVisible, setStartdateCalenderBtnVisible] = useState(false);
     const [endDateCalenderBtnVisible, setEndDateCalenderBtnVisible] = useState(false);
@@ -36,6 +54,7 @@ function S124Warnings() {
     const startDateTarget = useRef(null);
     const endDateTarget = useRef(null);
 
+<<<<<<< HEAD
     const [warningTypesList, setWarningTypesList] = useState([]);
     const [dataSetIds, setDataSetIds] = useState([]);
     const [geometryTypesList, setGeometryTypesList] = useState([]);
@@ -115,6 +134,45 @@ function S124Warnings() {
     const handleCalenderEndDateChange = (selectedDate) => {
         setSelectedEndDate(selectedDate);
         setShowEndDateCalendarDialog(false);
+=======
+    const navigationWarningTypes = [
+        'Local Navigational Warning',
+        'Coastal Navigational Warning',
+        'Sub-Area Navigational Warning',
+        'NAVAREA Navigational Warning',
+        'NAVAREA No Warning',
+        'Sub-Area No Warning',
+        'Coastal No Warning',
+        'Local No Warning',
+        'NAVAREA In-Force Bulletin',
+        'Sub-Area In-Force Bulletin',
+        'Coastal In-Force Bulletin',
+        'Local In-Force Bulletin',
+    ];
+
+    const handleInputChange = (event) => {
+        if (event.target.value === 'select') {
+            Toast.warn('Please select a warning type');
+        } else {
+            setSelectedNavigationWarningType(event.target.value);
+            setStartdateCalenderBtnVisible(true);
+            setEndDateCalenderBtnVisible(true);
+        }
+    };
+
+    const handleCalenderStartDateChange = (selectedDate) => {
+        if (selectedDate instanceof Date && !isNaN(selectedDate)) {
+            setSelectedStartDate(selectedDate);
+            setShowStartDateCalendarDialog(false); // Close the calendar after selecting a date
+        }
+    };
+
+    const handleCalenderEndDateChange = (selectedDate) => {
+        if (selectedDate instanceof Date && !isNaN(selectedDate)) {
+            setSelectedEndDate(selectedDate);
+            setShowEndDateCalendarDialog(false); // Close the calendar after selecting a date
+        }
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     };
 
     const handleOpenStartDateCalendar = (event) => {
@@ -131,6 +189,7 @@ function S124Warnings() {
         setShowStartDateCalendarDialog(false);
     };
 
+<<<<<<< HEAD
     function convertDateFormat(dateString) {
         let date = new Date(dateString);
 
@@ -184,10 +243,34 @@ function S124Warnings() {
                         }
                     }
                 }
+=======
+    const handleSubmit = () => {
+        if (olMap) {
+            const allLayers = olMap.getLayers().getArray();
+            const finalFilterString = `warningtype=${selectedNavigationWarningType}`;
+
+            let foundFeature = false;
+
+            allLayers.forEach(lyr => {
+                if (lyr instanceof ImageLayer && lyr.getSource() instanceof ImageWMS) {
+                    if (selectedMapLayer === lyr.get('title')) {
+                        lyr.setVisible(true);
+                        const params = lyr.getSource().getParams();
+                        params.CQL_FILTER = finalFilterString;
+                        lyr.getSource().updateParams(params);
+                        foundFeature = true;
+                    }
+                }
+            });
+
+            if (!foundFeature) {
+                alert('No features found for the selected warning type.');
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             }
         }
     };
 
+<<<<<<< HEAD
     return (
         <div>
             {isLoading && (
@@ -196,6 +279,13 @@ function S124Warnings() {
                 </StyledLoaderWraper>
             )}
 
+=======
+
+
+
+    return (
+        <div>
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             <FloatingLabel label="Warning Type" className='mb-2 mt-2'>
                 <Form.Select
                     id="warningType"
@@ -203,13 +293,18 @@ function S124Warnings() {
                     value={selectedNavigationWarningType}
                 >
                     <option value='select'>Select a Navigational Warning</option>
+<<<<<<< HEAD
                     {warningTypesList.map(option => (
+=======
+                    {navigationWarningTypes.map(option => (
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                         <option key={option} value={option}>
                             {option}
                         </option>
                     ))}
                 </Form.Select>
             </FloatingLabel>
+<<<<<<< HEAD
             <FloatingLabel label="Geometry Type" className='mb-2 mt-2'>
                 <Form.Select
                     id="GeometryType"
@@ -247,6 +342,11 @@ function S124Warnings() {
                         : <label className='me-2'>Start: {convertDateFormat(selectedStartDate).split('T')[0]}</label>
                     }
 
+=======
+            <Row>
+                <Col sm={6}>
+                    <label className='me-2'>Start: {selectedStartDate.toLocaleDateString()}</label>
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                     <StyledButton
                         title='Calendar'
                         className={`${startdateCalenderBtnVisible ? '' : 'disabled'}`}
@@ -264,7 +364,11 @@ function S124Warnings() {
                                     selected={selectedStartDate}
                                     onChange={handleCalenderStartDateChange}
                                     inline
+<<<<<<< HEAD
                                     dateFormat="yyyy-MM-dd"
+=======
+                                    dateFormat="yyyy-MM-dd'T'HH:mm:ss'Z'"
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                                     style={{
                                         backgroundColor,
                                         color: textColor,
@@ -276,10 +380,14 @@ function S124Warnings() {
                     </Overlay>
                 </Col>
                 <Col sm={6}>
+<<<<<<< HEAD
                     {selectedEndDate == null ?
                         <label className='me-2'>End:</label>
                         : <label className='me-2'>End: {convertDateFormat(selectedEndDate).split('T')[0]}</label>
                     }
+=======
+                    <label className='me-2'>End: {selectedEndDate.toLocaleDateString()}</label>
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
                     <StyledButton
                         title='Calendar'
                         className={`${endDateCalenderBtnVisible ? '' : 'disabled'}`}

@@ -7,19 +7,44 @@ import { CloseButton, StyledButton } from './StyledComponent';
 function BottomTable({ children, type }) {
 
     const { collapsedQueryResultPanel, updateCollapsedQueryResultPanel,
+<<<<<<< HEAD
         attributeQueryBottomTablePanelVisible, productFilterBottomTablePanelVisible, ActivewarnlistBottomTablePanelVisible } = useUtility();
+=======
+<<<<<<< HEAD
+        attributeQueryBottomTablePanelVisible, productFilterBottomTablePanelVisible, ActivewarnlistBottomTablePanelVisible } = useUtility();
+=======
+        attributeQueryBottomTablePanelVisible, productFilterBottomTablePanelVisible } = useUtility();
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
     const { backgroundColor, textColor } = useColor();
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         if ((type === 'attributeQuery' && attributeQueryBottomTablePanelVisible) ||
+<<<<<<< HEAD
             (type === 'productFilter' && productFilterBottomTablePanelVisible) ||
             type === 'Activewarnlist' && ActivewarnlistBottomTablePanelVisible) {
+=======
+<<<<<<< HEAD
+            (type === 'productFilter' && productFilterBottomTablePanelVisible) || type === 'Activewarnlist' && ActivewarnlistBottomTablePanelVisible) {
+            alert(type);
+=======
+            (type === 'productFilter' && productFilterBottomTablePanelVisible)) {
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
             setIsVisible(true);
         } else {
             setIsVisible(false);
         }
+<<<<<<< HEAD
     }, [type, productFilterBottomTablePanelVisible, attributeQueryBottomTablePanelVisible, ActivewarnlistBottomTablePanelVisible]);
+=======
+<<<<<<< HEAD
+    }, [type, productFilterBottomTablePanelVisible, attributeQueryBottomTablePanelVisible, ActivewarnlistBottomTablePanelVisible]);
+=======
+    }, [type, productFilterBottomTablePanelVisible, attributeQueryBottomTablePanelVisible]);
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
 
     return (
         <div
