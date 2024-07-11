@@ -3,32 +3,70 @@ import { useUtility } from '../../../../Contexts/UtilityContext';
 import { OLMapContext } from '../../../../Contexts/OlMapContext';
 import { CloseButton, StyledMapControlButton, StyledReactPaginateComp } from '../../../Reusable/StyledComponent';
 import { Table, Card, Stack, Container } from "react-bootstrap";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 import Pagination from 'react-bootstrap/Pagination';
 import ImageWMS from "ol/source/ImageWMS.js";
 import ImageLayer from "ol/layer/Image.js";
 import { S124NavWarningGroupLayer, nodeServerUrl } from '../../../../appConfig';
+<<<<<<< HEAD
 import axios from 'axios';
 import { useColor } from '../../../../Contexts/ColorContext';
 import './FeatureInfo.css';
 import Overlay from 'ol/Overlay';
+=======
+=======
+import { toast } from 'react-toastify';
+import Pagination from 'react-bootstrap/Pagination';
+import ImageWMS from "ol/source/ImageWMS.js";
+import ImageLayer from "ol/layer/Image.js";
+import { nodeServerUrl } from '../../../../appConfig';
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+import axios from 'axios';
+import { useColor } from '../../../../Contexts/ColorContext';
+import './FeatureInfo.css';
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
 function FeatureInfo() {
 
     const [title] = useState('FeatureInfo');
+<<<<<<< HEAD
 
     const { olMap, clearVectorSource, stopDrawAction, renderHighlightedFeatures,
         updateAttributeQueryOverLayVisible, updateS124NavWarningOverLayVisible } = useContext(OLMapContext);
 
+=======
+<<<<<<< HEAD
+    const { olMap, clearVectorSource, stopDrawAction, renderHighlightedFeatures, overlayRef, updateOverLayVisibility ,attributeoverlayRef,updateAttrOverLayVisibility} = useContext(OLMapContext);
+=======
+    const { olMap, clearVectorSource, stopDrawAction, renderHighlightedFeatures } = useContext(OLMapContext);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     const { backgroundColor, textColor, borderColor, fontFamily } = useColor();
 
     const sidebarHeight = window.innerHeight;
 
     const { featureInfoFlag, updateFeatureInfoFlag, registerFeatureInfoClickHandler,
+<<<<<<< HEAD
         unregisterFeatureInfoClickHandlers, toggleComponent, updateFeatureInfoRecords,
         featureInfoRecords, attributeQueryPanelVisible, s124NavWarningsSideBarPanel,
         attributeQuerySelectedLayer, updateS124NavWarningDataSetFileIdentifier,
         s124geometrytype, s124listvalue, selectedAttributeQueryOption } = useUtility();
 
+=======
+<<<<<<< HEAD
+        unregisterFeatureInfoClickHandlers, toggleComponent, updateFeatureInfoRecords, featureInfoRecords,
+        attributeQueryPanelVisible, s124NavWarningsSideBarPanel, attributeQuerySelectedLayer, updateS124NavWarningDataSetFileIdentifier ,s124geometrytype} = useUtility();
+
+=======
+        unregisterFeatureInfoClickHandlers, toggleComponent, updateCollapsedQueryResultPanel,
+        updateProductFilterBottomTablePanelvisible } = useUtility();
+
+    const [uniqueFeatureRecords, setUniqueFeatureRecords] = useState([]);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     const [featuresGeometry, setFeaturesGeometry] = useState([]);
     const [layerName, setLayerName] = useState(null);
 
@@ -38,7 +76,15 @@ function FeatureInfo() {
     const lastIndex = currentPage * recordsPerPage;
     const firstIndex = lastIndex - recordsPerPage;
     const [records, setRecords] = useState([]);
+<<<<<<< HEAD
     const numberOfPages = Math.ceil(featureInfoRecords.length / recordsPerPage);
+=======
+<<<<<<< HEAD
+    const numberOfPages = Math.ceil(featureInfoRecords.length / recordsPerPage);
+=======
+    const numberOfPages = Math.ceil(uniqueFeatureRecords.length / recordsPerPage);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     const pageNumbers = Array.from({ length: numberOfPages }, (_, i) => i + 1);
 
     useEffect(() => {
@@ -70,14 +116,28 @@ function FeatureInfo() {
     useEffect(() => {
         setCurrentPage(1);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         if (featureInfoRecords.length > 0) {
             setRecords([]);
             setColumns(Object.keys(featureInfoRecords[0]));
             var data = featureInfoRecords.slice(firstIndex, lastIndex);
+<<<<<<< HEAD
+=======
+=======
+        if (uniqueFeatureRecords.length > 0) {
+            setRecords([]);
+            setColumns(Object.keys(uniqueFeatureRecords[0]));
+            var data = uniqueFeatureRecords.slice(firstIndex, lastIndex);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             setRecords(data);
         } else {
             setColumns([]);
         }
+<<<<<<< HEAD
     }, [featureInfoRecords]);
 
     useEffect(() => {
@@ -144,16 +204,35 @@ function FeatureInfo() {
             getfeatureDate(event);
         }
     };
+=======
+<<<<<<< HEAD
+    }, [featureInfoRecords]);
+=======
+    }, [uniqueFeatureRecords]);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
     const handleFeatureInfo = () => {
         toggleComponent(title, olMap);
         setFeaturesGeometry([]);
+<<<<<<< HEAD
         updateFeatureInfoRecords([]);
         setColumns([]);
         setLayerName(null);
         setRecords([]);
         updateAttributeQueryOverLayVisible(false);
         updateS124NavWarningOverLayVisible(false);
+=======
+<<<<<<< HEAD
+        updateFeatureInfoRecords([]);
+=======
+        setUniqueFeatureRecords([]);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+        setColumns([]);
+        setLayerName(null);
+        setRecords([]);
+
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         let featureInfoBtn = document.getElementById("featureInfoBtn");
 
         if (featureInfoBtn) {
@@ -174,12 +253,88 @@ function FeatureInfo() {
             }
         }
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    useEffect(() => {
+         if (s124NavWarningsSideBarPanel) {
+            
+                registerFeatureInfoClickHandler('click', handleMapClick, olMap);
+            
+           
+        }
+
+    }, [s124NavWarningsSideBarPanel,s124geometrytype])
+
+
+    useEffect(() => {
+        if (attributeQueryPanelVisible) {
+               registerFeatureInfoClickHandler('click', handleMapClick, olMap);
+       }
+
+   }, [attributeQueryPanelVisible,updateAttrOverLayVisibility])
+
+   
+    // const handleMapClick = (event) => {
+        
+    //     if (s124NavWarningsSideBarPanel) {
+    //         const coordinate = event.coordinate;
+    //         console.log(coordinate);
+    //         updateOverLayVisibility(true);
+    //         if (overlayRef.current) {
+    //             console.log("cmng");
+    //             overlayRef.current.setPosition(coordinate);
+    //         }
+    //         getfeatureDate(event);
+    // }
+    //     else {
+    //         getfeatureDate(event);
+    //     }
+
+      
+    // };
+    
+    const handleMapClick = (event) => {
+        const coordinate = event.coordinate;
+    
+        if (s124NavWarningsSideBarPanel) {
+            updateOverLayVisibility(true);
+            if (overlayRef.current) {
+                overlayRef.current.setPosition(coordinate);
+            }
+            getfeatureDate(event);
+        } else if (attributeQueryPanelVisible) {
+            updateOverLayVisibility(true);
+            if (attributeoverlayRef.current) {
+                attributeoverlayRef.current.setPosition(coordinate);
+            }
+            getfeatureDate(event);
+        } else {
+            getfeatureDate(event);
+        }
+    };
+    
+    
+
+  
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
     const getfeatureDate = async (event) => {
         clearVectorSource();
         stopDrawAction();
         setRecords([]);
         updateFeatureInfoRecords([]);
+<<<<<<< HEAD
+=======
+=======
+
+    const handleMapClick = async (event) => {
+        clearVectorSource();
+        stopDrawAction();
+        setRecords([]);
+        setUniqueFeatureRecords([]);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         var allfeaturesList = [];
         var layers = olMap.getLayers().getArray();
 
@@ -197,6 +352,10 @@ function FeatureInfo() {
                             FEATURE_COUNT: 20
                         });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                     if (featureUrl) {
 
                         const queryParams = { param: featureUrl };
@@ -211,17 +370,52 @@ function FeatureInfo() {
                                 for (let index = 0; index < res.data.features.length; index++) {
 
                                     let properties = res.data.features[index].properties;
+<<<<<<< HEAD
                                     properties.layerName = lyrTitle;
+=======
+
+                                    if (attributeQuerySelectedLayer !== S124NavWarningGroupLayer) {
+                                        properties.layerName = lyrTitle;
+                                    }
+                                    else {
+                                       // updateS124NavWarningDataSetFileIdentifier(res.data.features[index].dataset_file_identifier);
+                                    }
+
+=======
+                    console.log("featureUrl", featureUrl);
+
+                    if (featureUrl) {
+                        const queryParams = { param: featureUrl };
+                        try {
+                            const res = await axios.get(`${nodeServerUrl}/getFeatureInfo`, { params: queryParams });
+                            console.log(res);
+                            if (res.data.features) {
+                                let lyrTitle = lyr.get('title');
+                                setFeaturesGeometry(res.data.features);
+                                for (let index = 0; index < res.data.features.length; index++) {
+                                    let properties = res.data.features[index].properties;
+                                    properties.layerName = lyrTitle;
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                     allfeaturesList.push(properties);
                                 }
                             }
 
                             if (allfeaturesList.length > 0) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
                                 res.data.features.forEach((feature, index) => {
                                     updateS124NavWarningDataSetFileIdentifier(res.data.features[index]?.properties.dataset_file_identifier);
                                 });
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                 const vectorLayer = renderHighlightedFeatures(res.data);
                                 var extent = vectorLayer.getSource().getExtent();
                                 olMap.getView().fit(extent, {
@@ -229,6 +423,10 @@ function FeatureInfo() {
                                     duration: 1000
                                 });
                                 olMap.addLayer(vectorLayer);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                 updateFeatureInfoRecords(allfeaturesList);
                             }
                             else {
@@ -237,6 +435,16 @@ function FeatureInfo() {
 
                         } catch (error) {
                             console.log(error);
+<<<<<<< HEAD
+=======
+=======
+                                setUniqueFeatureRecords(allfeaturesList);
+                            }
+
+                        } catch (error) {
+                            toast.warn('Error fetching features:', error);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                         }
                     }
                 }
@@ -244,6 +452,7 @@ function FeatureInfo() {
         });
 
         setTimeout(() => {
+<<<<<<< HEAD
             if (allfeaturesList.length != 0) {
                 setLayerName(allfeaturesList[0].layerName);
             } else {
@@ -252,6 +461,23 @@ function FeatureInfo() {
             }
         }, 500)
     }
+=======
+
+<<<<<<< HEAD
+            if (allfeaturesList.length < 0) {
+                setLayerName(allfeaturesList[0].layerName);;
+            }
+        }, 500)
+    }
+=======
+            if (allfeaturesList.length > 0) {
+                setLayerName(allfeaturesList[0].layerName);
+            }
+
+        }, 500)
+    };
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
     const renderPageNumbers = () => {
         const visiblePages = 4;
@@ -303,8 +529,18 @@ function FeatureInfo() {
             const endIndex = startIndex + recordsPerPage;
             const newRecords = [];
 
+<<<<<<< HEAD
             for (let i = startIndex; i < endIndex && i < featureInfoRecords.length; i++) {
                 newRecords.push(featureInfoRecords[i]);
+=======
+<<<<<<< HEAD
+            for (let i = startIndex; i < endIndex && i < featureInfoRecords.length; i++) {
+                newRecords.push(featureInfoRecords[i]);
+=======
+            for (let i = startIndex; i < endIndex && i < uniqueFeatureRecords.length; i++) {
+                newRecords.push(uniqueFeatureRecords[i]);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             }
 
             setRecords(newRecords);
@@ -358,11 +594,19 @@ function FeatureInfo() {
                 </StyledMapControlButton>
             </div>
             <div id='featureInfoSidebarConatiner'>
+<<<<<<< HEAD
                 {records && records.length > 0 ? (<Card id='popup-content' style={{ borderColor: borderColor }}>
                     <Card.Header className="pe-1" style={{ backgroundColor: backgroundColor, color: textColor }}>
                         <Stack direction="horizontal">
                             <i className="bi bi-info-circle me-2"></i>
                             {records.length > 0 ? <h6 className="mb-0">{layerName !== null && layerName}</h6> : <h6 className="mb-0"> Feature information</h6>}
+=======
+                {records && records.length > 0 ? (<Card id='popup-content' style={{ borderColor: borderColor, minHeight: '800px' }}>
+                    <Card.Header className="pe-1" style={{ backgroundColor: backgroundColor, color: textColor }}>
+                        <Stack direction="horizontal">
+                            <i className="bi bi-info-circle me-2"></i>
+                            {records.length > 0 && <h6 className="mb-0">{layerName !== null && layerName}</h6>}
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                             <CloseButton onClick={handleCloseSideBar} id="popup-closer" className="ms-auto">
                                 <i className="bi bi-x"></i>
                             </CloseButton>
@@ -411,8 +655,12 @@ function FeatureInfo() {
                             <Stack direction='horizontal'>
                                 <div className='mb-0'>
                                     <i className="bi bi-info-circle me-2"></i>
+<<<<<<< HEAD
                                     Feature information
                                 </div>
+=======
+                                    Feature information</div>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                 <CloseButton onClick={handleCloseSideBar} id='popup-closer' className='ms-auto'>
                                     <i className='bi bi-x'></i>
                                 </CloseButton>

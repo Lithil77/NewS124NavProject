@@ -13,7 +13,15 @@ import ProductTypes from './ProductTypes/ProductTypes';
 import UsageBands from './UsageBands/UsageBands';
 import GeoTools from './GeoTools/GeoTools';
 import BottomTable from '../../../Reusable/BottomTable';
+<<<<<<< HEAD
 import { S124NavWarningGroupLayer, S1412windLayer } from '../../../../appConfig';
+=======
+<<<<<<< HEAD
+import { S124NavWarningGroupLayer, S1412windLayer } from '../../../../appConfig';
+=======
+import { S124NavWarnings, S1412windLayer } from '../../../../appConfig';
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 import ResultTable from './ResultTable/ResultTable';
 import { clearHighLightVectorData, clearVectorSource } from '../../../../OpenLayersUtils/OpenLayers';
 import { RTZFileContext } from '../../../../Contexts/RTZFileContext';
@@ -138,6 +146,13 @@ function ProductFilter() {
         updateCollapsedQueryResultPanel(false);
 
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     return (
         <div>
             <div id='productFilterbuttonContainer' style={{ position: "relative" }}>
@@ -165,7 +180,15 @@ function ProductFilter() {
                             </StyledLoaderWraper>
                         )}
                         <Product></Product>
+<<<<<<< HEAD
                         {selectedMapLayer !== S124NavWarningGroupLayer ? <>
+=======
+<<<<<<< HEAD
+                        {selectedMapLayer !== S124NavWarningGroupLayer ? <>
+=======
+                        {selectedMapLayer !== S124NavWarnings ? <>
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                             <AgencyCodes></AgencyCodes>
                             <Countries></Countries>
                             <ProductTypes></ProductTypes>

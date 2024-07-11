@@ -1,7 +1,19 @@
 export const properties = [
   {
     "id": 16,
+<<<<<<< HEAD
     "backgroundColor": "#008080",
+=======
+<<<<<<< HEAD
+    "backgroundColor": "#008080",
+=======
+<<<<<<< HEAD
+    "backgroundColor": "#008080",
+=======
+    "backgroundColor": "#1E3A8A",
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     "textColor": "#ffffff",
     "borderColor": "#C7D5FF",
     "TypographicColor": "#000000",

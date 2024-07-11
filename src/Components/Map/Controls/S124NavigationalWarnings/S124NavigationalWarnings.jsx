@@ -56,6 +56,7 @@ function S124NavigationalWarnings() {
     const handleSelect = (eventKey) => {
         updates124activekey(eventKey);
     };
+<<<<<<< HEAD
     const CreateNavWarn = () => {
         return(
             <i class="bi bi-pencil-square"></i>
@@ -66,6 +67,9 @@ function S124NavigationalWarnings() {
             <i class="bi bi-list-columns-reverse"></i>
         );
     }
+=======
+
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     return (
         <>
             <div id='s124NavigationalWarningContainer' style={{ position: "relative" }}>
@@ -96,10 +100,17 @@ function S124NavigationalWarnings() {
                             id="uncontrolled-tab-example"
                             className="mb-1"
                         >
+<<<<<<< HEAD
                             <Tab eventKey="createNavWarn" title={<CreateNavWarn/>}>
                                 <StepperForm />
                             </Tab>
                             <Tab eventKey="listAllActiveWarns" title={<ActiveWarnList/>}>
+=======
+                            <Tab eventKey="createNavWarn" title="Create NavWarns">
+                                <StepperForm />
+                            </Tab>
+                            <Tab eventKey="listAllActiveWarns" title="Active warns List">
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                 <ListofAllActiveNavWarns />
                             </Tab>
                         </Tabs>

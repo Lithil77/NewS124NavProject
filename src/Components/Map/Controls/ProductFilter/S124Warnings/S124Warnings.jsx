@@ -1,20 +1,49 @@
+<<<<<<< HEAD
 import React, { useContext, useState, useRef, useEffect } from 'react';
+=======
+<<<<<<< HEAD
+import React, { useContext, useState, useRef, useEffect } from 'react';
+=======
+import React, { useContext, useState, useRef } from 'react';
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 import ImageWMS from "ol/source/ImageWMS.js";
 import ImageLayer from "ol/layer/Image.js";
 import { Col, FloatingLabel, Form, Overlay, Popover, Row } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import { useColor } from '../../../../../Contexts/ColorContext';
 import 'react-datepicker/dist/react-datepicker.css';
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 import { StyledButton, StyledLoaderInner, StyledLoaderWraper } from '../../../../Reusable/StyledComponent';
 import { useProductFilter } from '../../../../../Contexts/ProductFilterContext';
 import { OLMapContext } from '../../../../../Contexts/OlMapContext';
 import { toast } from 'react-toastify';
+<<<<<<< HEAD
+=======
+=======
+import { StyledButton } from '../../../../Reusable/StyledComponent';
+import { useProductFilter } from '../../../../../Contexts/ProductFilterContext';
+import { OLMapContext } from '../../../../../Contexts/OlMapContext';
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
 function S124Warnings() {
 
     const { olMap } = useContext(OLMapContext);
+<<<<<<< HEAD
     const { selectedMapLayer, getS124NavigationalWarningTypes, getS124NavWarnDataSetIDs,
         getS124NavigationalGeometryTypes, getS124NavWarnPublicationDates } = useProductFilter();
+=======
+<<<<<<< HEAD
+    const { selectedMapLayer, getS124NavigationalWarningTypes, getS124NavWarnDataSetIDs,
+        getS124NavigationalGeometryTypes, getS124NavWarnPublicationDates } = useProductFilter();
+
+    const { backgroundColor, textColor, borderColor } = useColor();
+
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     const [selectedNavigationWarningType, setSelectedNavigationWarningType] = useState('select');
     const [selectedDataSetId, setSelectedDataSetId] = useState('select');
     const [selectedGeometryType, setSelectedGeometryType] = useState('select');
@@ -23,7 +52,17 @@ function S124Warnings() {
 
     const [selectedStartDate, setSelectedStartDate] = useState(null);
     const [selectedEndDate, setSelectedEndDate] = useState(null);
+<<<<<<< HEAD
     const { backgroundColor, textColor, borderColor } = useColor();
+=======
+=======
+    const { selectedMapLayer } = useProductFilter();
+    const [selectedNavigationWarningType, setSelectedNavigationWarningType] = useState('select');
+    const [selectedStartDate, setSelectedStartDate] = useState(new Date());
+    const [selectedEndDate, setSelectedEndDate] = useState(new Date());
+    const { backgroundColor, textColor, borderColor } = useColor();
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
     const [startdateCalenderBtnVisible, setStartdateCalenderBtnVisible] = useState(false);
     const [endDateCalenderBtnVisible, setEndDateCalenderBtnVisible] = useState(false);
@@ -34,19 +73,27 @@ function S124Warnings() {
     const startDateTarget = useRef(null);
     const endDateTarget = useRef(null);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     const [warningTypesList, setWarningTypesList] = useState([]);
     const [dataSetIds, setDataSetIds] = useState([]);
     const [geometryTypesList, setGeometryTypesList] = useState([]);
     const [publicationDates, setPublicationDates] = useState([]);
+<<<<<<< HEAD
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const currentDate = new Date().toISOString().split('T')[0];
+=======
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
     useEffect(() => {
         let isMounted = true;
 
         const fetchWarningTypes = async () => {
             setWarningTypesList([]);
+<<<<<<< HEAD
             const warningTypesList  = await getS124NavigationalWarningTypes(selectedMapLayer, olMap);
             if (isMounted && warningTypesList .length > 0) {
                 setWarningTypesList(warningTypesList );
@@ -69,6 +116,13 @@ function S124Warnings() {
            
            
         }
+=======
+            const list = await getS124NavigationalWarningTypes(selectedMapLayer, olMap);
+            if (isMounted && list.length > 0) {
+                setWarningTypesList(list);
+            }
+
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             const dates = await getS124NavWarnPublicationDates(selectedMapLayer, olMap);
 
             if (isMounted && dates.length > 0) {
@@ -82,12 +136,29 @@ function S124Warnings() {
     }, []);
 
     const handleChangeDataSetId = async (event) => {
+<<<<<<< HEAD
         setSelectedDataSetId(event.target.value);
         setStartdateCalenderBtnVisible(true);
         setEndDateCalenderBtnVisible(true);
     }
 
     const handleInputChange = async (event) => {
+=======
+
+        if (event.target.value === 'select') {
+            toast.warn('Please select a geometry type');
+        } else {
+            setSelectedDataSetId(event.target.value);
+            setStartdateCalenderBtnVisible(true);
+            setEndDateCalenderBtnVisible(true);
+        }
+    }
+
+    const handleInputChange = async (event) => {
+        if (event.target.value === 'select') {
+            toast.warn('Please select a warning type');
+        } else {
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             const warningType = event.target.value;
             setSelectedNavigationWarningType(warningType);
             setIsLoading(true);
@@ -97,9 +168,21 @@ function S124Warnings() {
             if (geotypes.length > 0) {
                 setGeometryTypesList(geotypes);
             }
+<<<<<<< HEAD
     };
 
     const handleGeometryTypeChange = async (event) => {
+=======
+        }
+
+    };
+
+    const handleGeometryTypeChange = async (event) => {
+
+        if (event.target.value === 'select') {
+            toast.warn('Please select a geometry type');
+        } else {
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             const geometryType = event.target.value;
             setSelectedGeometryType(geometryType);
             setIsLoading(true);
@@ -108,9 +191,16 @@ function S124Warnings() {
             if (datasetIds.length > 0) {
                 setDataSetIds(datasetIds);
             }
+<<<<<<< HEAD
     }
 
  /*    const handleCalenderStartDateChange = (selectedDate) => {
+=======
+        }
+    }
+
+    const handleCalenderStartDateChange = (selectedDate) => {
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         setSelectedStartDate(selectedDate);
         setShowStartDateCalendarDialog(false);
     };
@@ -118,6 +208,48 @@ function S124Warnings() {
     const handleCalenderEndDateChange = (selectedDate) => {
         setSelectedEndDate(selectedDate);
         setShowEndDateCalendarDialog(false);
+<<<<<<< HEAD
+=======
+=======
+    const navigationWarningTypes = [
+        'Local Navigational Warning',
+        'Coastal Navigational Warning',
+        'Sub-Area Navigational Warning',
+        'NAVAREA Navigational Warning',
+        'NAVAREA No Warning',
+        'Sub-Area No Warning',
+        'Coastal No Warning',
+        'Local No Warning',
+        'NAVAREA In-Force Bulletin',
+        'Sub-Area In-Force Bulletin',
+        'Coastal In-Force Bulletin',
+        'Local In-Force Bulletin',
+    ];
+
+    const handleInputChange = (event) => {
+        if (event.target.value === 'select') {
+            Toast.warn('Please select a warning type');
+        } else {
+            setSelectedNavigationWarningType(event.target.value);
+            setStartdateCalenderBtnVisible(true);
+            setEndDateCalenderBtnVisible(true);
+        }
+    };
+
+    const handleCalenderStartDateChange = (selectedDate) => {
+        if (selectedDate instanceof Date && !isNaN(selectedDate)) {
+            setSelectedStartDate(selectedDate);
+            setShowStartDateCalendarDialog(false); // Close the calendar after selecting a date
+        }
+    };
+
+    const handleCalenderEndDateChange = (selectedDate) => {
+        if (selectedDate instanceof Date && !isNaN(selectedDate)) {
+            setSelectedEndDate(selectedDate);
+            setShowEndDateCalendarDialog(false); // Close the calendar after selecting a date
+        }
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     };
 
     const handleOpenStartDateCalendar = (event) => {
@@ -132,8 +264,14 @@ function S124Warnings() {
         endDateTarget.current = event.target;
         setShowEndDateCalendarDialog(true);
         setShowStartDateCalendarDialog(false);
+<<<<<<< HEAD
     };*/
 
+=======
+    };
+
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     function convertDateFormat(dateString) {
         let date = new Date(dateString);
 
@@ -159,6 +297,7 @@ function S124Warnings() {
             }
         }
         return false; // Return false if no date in range is found
+<<<<<<< HEAD
     }; 
     const handleStartDateChange = (e) => {
         setStartDate(e.target.value);
@@ -168,12 +307,21 @@ function S124Warnings() {
         setEndDate(e.target.value);
         
     };
+=======
+    };
+
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     const handleSubmit = async () => {
         if (olMap) {
 
             const allLayers = olMap.getLayers().getArray();
+<<<<<<< HEAD
            /*  let startDate = convertDateFormat(startDate);
             let endDate = convertDateFormat(endDate);  */
+=======
+            let startDate = convertDateFormat(selectedStartDate);
+            let endDate = convertDateFormat(selectedEndDate);
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             const exists = isAnyDateInRange(publicationDates, startDate, endDate);
 
             if (!exists) {
@@ -194,10 +342,41 @@ function S124Warnings() {
                         }
                     }
                 }
+<<<<<<< HEAD
             }
         }
     };
     
+=======
+=======
+    const handleSubmit = () => {
+        if (olMap) {
+            const allLayers = olMap.getLayers().getArray();
+            const finalFilterString = `warningtype=${selectedNavigationWarningType}`;
+
+            let foundFeature = false;
+
+            allLayers.forEach(lyr => {
+                if (lyr instanceof ImageLayer && lyr.getSource() instanceof ImageWMS) {
+                    if (selectedMapLayer === lyr.get('title')) {
+                        lyr.setVisible(true);
+                        const params = lyr.getSource().getParams();
+                        params.CQL_FILTER = finalFilterString;
+                        lyr.getSource().updateParams(params);
+                        foundFeature = true;
+                    }
+                }
+            });
+
+            if (!foundFeature) {
+                alert('No features found for the selected warning type.');
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+            }
+        }
+    };
+
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     return (
         <div>
             {isLoading && (
@@ -206,25 +385,52 @@ function S124Warnings() {
                 </StyledLoaderWraper>
             )}
 
+<<<<<<< HEAD
+=======
+=======
+
+
+
+    return (
+        <div>
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             <FloatingLabel label="Warning Type" className='mb-2 mt-2'>
                 <Form.Select
                     id="warningType"
                     onChange={handleInputChange}
                     value={selectedNavigationWarningType}
                 >
+<<<<<<< HEAD
                     {warningTypesList.map(option => (
+=======
+                    <option value='select'>Select a Navigational Warning</option>
+<<<<<<< HEAD
+                    {warningTypesList.map(option => (
+=======
+                    {navigationWarningTypes.map(option => (
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                         <option key={option} value={option}>
                             {option}
                         </option>
                     ))}
                 </Form.Select>
             </FloatingLabel>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             <FloatingLabel label="Geometry Type" className='mb-2 mt-2'>
                 <Form.Select
                     id="GeometryType"
                     onChange={handleGeometryTypeChange}
                     value={selectedGeometryType}
                 >
+<<<<<<< HEAD
+=======
+                    <option value='select'>Select a Geometry type</option>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                     {geometryTypesList.map(option => (
                         <option key={option} value={option}>
                             {option}
@@ -238,6 +444,10 @@ function S124Warnings() {
                     onChange={handleChangeDataSetId}
                     value={selectedDataSetId}
                 >
+<<<<<<< HEAD
+=======
+                    <option value='select'>Select a Dataset Id</option>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                     {dataSetIds.map(option => (
                         <option key={option} value={option}>
                             {option}
@@ -245,6 +455,7 @@ function S124Warnings() {
                     ))}
                 </Form.Select>
             </FloatingLabel>
+<<<<<<< HEAD
             <Form>
                 <Row>
                     <Col md className="pe-1" title='StartDate'>
@@ -266,6 +477,10 @@ function S124Warnings() {
                 </Row>
             </Form>
          {/*    <Row>
+=======
+
+            <Row>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                 <Col sm={6}>
 
                     {selectedStartDate == null ?
@@ -273,6 +488,14 @@ function S124Warnings() {
                         : <label className='me-2'>Start: {convertDateFormat(selectedStartDate).split('T')[0]}</label>
                     }
 
+<<<<<<< HEAD
+=======
+=======
+            <Row>
+                <Col sm={6}>
+                    <label className='me-2'>Start: {selectedStartDate.toLocaleDateString()}</label>
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                     <StyledButton
                         title='Calendar'
                         className={`${startdateCalenderBtnVisible ? '' : 'disabled'}`}
@@ -290,7 +513,15 @@ function S124Warnings() {
                                     selected={selectedStartDate}
                                     onChange={handleCalenderStartDateChange}
                                     inline
+<<<<<<< HEAD
                                     dateFormat="yyyy-MM-dd"
+=======
+<<<<<<< HEAD
+                                    dateFormat="yyyy-MM-dd"
+=======
+                                    dateFormat="yyyy-MM-dd'T'HH:mm:ss'Z'"
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                     style={{
                                         backgroundColor,
                                         color: textColor,
@@ -302,10 +533,20 @@ function S124Warnings() {
                     </Overlay>
                 </Col>
                 <Col sm={6}>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                     {selectedEndDate == null ?
                         <label className='me-2'>End:</label>
                         : <label className='me-2'>End: {convertDateFormat(selectedEndDate).split('T')[0]}</label>
                     }
+<<<<<<< HEAD
+=======
+=======
+                    <label className='me-2'>End: {selectedEndDate.toLocaleDateString()}</label>
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                     <StyledButton
                         title='Calendar'
                         className={`${endDateCalenderBtnVisible ? '' : 'disabled'}`}
@@ -334,7 +575,11 @@ function S124Warnings() {
                         </Popover>
                     </Overlay>
                 </Col>
+<<<<<<< HEAD
             </Row> */}
+=======
+            </Row>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             <StyledButton className='mt-4' onClick={handleSubmit}>Submit</StyledButton>
         </div>
     );

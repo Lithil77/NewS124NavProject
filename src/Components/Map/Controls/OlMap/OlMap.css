@@ -9,18 +9,34 @@
     width: 100%;
     padding: 0;
     transition: padding-right 0.3s;
+<<<<<<< HEAD
     overflow: hidden;
+=======
+<<<<<<< HEAD
+    overflow: hidden;
+=======
+<<<<<<< HEAD
+    overflow: hidden;
+=======
+    overflow-x: hidden;
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 }
 
 .map-container.active {
     margin-right: 350px;
 }
+<<<<<<< HEAD
 .s124-nav-warning.active{
     margin-right: 450px !important;
 }
 #s124NavWarningsInfoSidebar{
     width: 450px !important;
 }
+=======
+
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 .sideBar {
     position: absolute;
     top: 0;
@@ -39,6 +55,7 @@
 
 .sideBar:not(.active) {
     transform: translateX(100%);
+<<<<<<< HEAD
 }
 
 .overlay {
@@ -50,18 +67,65 @@
     width: auto;
     position: relative;
     height: auto;
+=======
+<<<<<<< HEAD
+}
+
+.overlay {
+    background-color: rgb(246, 241, 241);
+    border: 1px solid hsl(0, 47%, 94%);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    position: relative;
+    height: 120px;
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 }
 
 .overlay::after {
     content: '';
     position: absolute;
+<<<<<<< HEAD
     bottom: -19px;
+=======
+    bottom: -20px;
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     left: 50%;
     transform: translateX(-50%);
     border-width: 10px;
     border-style: solid;
+<<<<<<< HEAD
     border-color: #fff transparent transparent transparent;
 }
 #popover-basic .popover-arrow{
     display: none;
 }
+=======
+    border-color: #f0e9e9 transparent transparent transparent;
+}
+/* .attrroverlay {
+    background-color: rgb(246, 241, 241);
+    border: 1px solid hsl(0, 47%, 94%);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    position: relative;
+    height: 120px;
+}
+
+.attrroverlay::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: #f0e9e9 transparent transparent transparent;
+} */
+=======
+}
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84

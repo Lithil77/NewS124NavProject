@@ -3,16 +3,25 @@
         "version": "0.0.0",
         "type": "module",
         "scripts": {
+<<<<<<< HEAD
            "start": "npm-run-all --parallel start:react start:server", 
             "start:react": "vite",
             "start:server": "cd src/Server && node index.js",
             "dev": "vite"
+=======
+            "start": "npm-run-all --parallel start:server start:react",
+            "start:server": "node src/Server/index.js",
+            "start:react": "vite"
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         },
         "dependencies": {
             "axios": "^1.6.8",
             "bootstrap": "^5.3.3",
             "bootstrap-icons": "^1.11.3",
+<<<<<<< HEAD
             "classnames": "^2.5.1",
+=======
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             "cors": "^2.8.5",
             "ol": "^9.1.0",
             "react": "^18.2.0",

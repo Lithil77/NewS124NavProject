@@ -1,5 +1,9 @@
 import React, { useEffect, useState, useContext, useRef } from 'react';
+<<<<<<< HEAD
 import { ListGroup, Stack, Button, Form, Col, Overlay, Popover, Row , FloatingLabel} from 'react-bootstrap';
+=======
+import { ListGroup, Stack, Button, Form, Col, Overlay, Popover, Row } from 'react-bootstrap';
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
@@ -8,7 +12,10 @@ import { S124NavigationalwarningsAPI } from '../../../../appConfig';
 import { OLMapContext } from '../../../../Contexts/OlMapContext';
 import { StyledButton } from '../../../Reusable/StyledComponent';
 import { useColor } from '../../../../Contexts/ColorContext';
+<<<<<<< HEAD
 import { useUtility } from '../../../../Contexts/UtilityContext';
+=======
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
 const ListofAllActiveNavWarns = () => {
 
@@ -19,7 +26,11 @@ const ListofAllActiveNavWarns = () => {
     const [filteredWarnings, setFilteredWarnings] = useState([]);
     const { olMap, renderWarningHighlightedFeatures } = useContext(OLMapContext);
 
+<<<<<<< HEAD
  /*    const [selectedS124NavWarStartDate, setSelectedS124NavWarStartDate] = useState(null);
+=======
+    const [selectedS124NavWarStartDate, setSelectedS124NavWarStartDate] = useState(null);
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     const [selectedS124NavWarEndDate, setSelectedS124NavWarEndDate] = useState(null);
 
     const [s124NavWarStartdateCalenderBtnVisible, setS124NavWarStartdateCalenderBtnVisible] = useState(false);
@@ -29,11 +40,15 @@ const ListofAllActiveNavWarns = () => {
     const [showS124NavWarEndDateCalendarDialog, setShowS124NavWarEndDateCalendarDialog] = useState(false);
 
     const S124NavWarStartDateTarget = useRef(null);
+<<<<<<< HEAD
     const S124NavWarEndDateTarget = useRef(null); */
     const { updateS124listvalue } = useUtility();
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const currentDate = new Date().toISOString().split('T')[0];
+=======
+    const S124NavWarEndDateTarget = useRef(null);
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
     useEffect(() => {
         const warnlist = document.getElementById('activewarnlistcontainer');
@@ -42,8 +57,13 @@ const ListofAllActiveNavWarns = () => {
             mapvisible.append(warnlist);
         }
         fetchlistofallwarnings();
+<<<<<<< HEAD
        /*  setS124NavWarStartdateCalenderBtnVisible(true);
         setS124NavWarEndDateCalenderBtnVisible(true); */
+=======
+        setS124NavWarStartdateCalenderBtnVisible(true);
+        setS124NavWarEndDateCalenderBtnVisible(true);
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     }, []);
 
     const fetchlistofallwarnings = () => {
@@ -84,7 +104,10 @@ const ListofAllActiveNavWarns = () => {
             minResolution: 10,
             duration: 1000
         });
+<<<<<<< HEAD
         updateS124listvalue('warnlist');
+=======
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
     };
 
@@ -104,7 +127,11 @@ const ListofAllActiveNavWarns = () => {
             });
     };
 
+<<<<<<< HEAD
     /* const handleCalenderStartDateChange = (selectedDate) => {
+=======
+    const handleCalenderStartDateChange = (selectedDate) => {
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         setSelectedS124NavWarStartDate(selectedDate);
         setShowS124NavWarStartDateCalendarDialog(false);
     };
@@ -176,6 +203,7 @@ const ListofAllActiveNavWarns = () => {
 
         setFilteredWarnings(filtered);
     };
+<<<<<<< HEAD
  */
 
     const handleStartDateChange = (e) => {
@@ -244,6 +272,12 @@ const ListofAllActiveNavWarns = () => {
                 </Row>
             </Form>
          {/*    <Form className='text-center mt-2'>
+=======
+
+    return (
+        <div>
+            <Form className='text-center mt-2'>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                 <Row>
                     <Col sm={6}>
                         {selectedS124NavWarStartDate == null ?
@@ -314,8 +348,13 @@ const ListofAllActiveNavWarns = () => {
                         </Overlay>
                     </Col>
                 </Row>
+<<<<<<< HEAD
                 <Button variant="outline-secondary" onClick={handleFilter}>Filter</Button>
             </Form>  */}
+=======
+                <Button variant="primary" onClick={handleFilter}>Filter</Button>
+            </Form>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             <ListGroup defaultActiveKey="#link1">
                 {filteredWarnings.map((warning, index) => (
                     <ListGroup.Item action key={index} >

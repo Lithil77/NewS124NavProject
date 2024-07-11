@@ -10,6 +10,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
@@ -17,6 +21,11 @@ app.use((req, res, next) => {
     next();
 });
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 app.listen(serverPort, () => {
     console.log(`App is running on port ${serverPort}`);
 });
@@ -61,6 +70,10 @@ app.get('/getProducerCodes', async (req, res) => {
     }
 });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 app.get('/getLayerOfLayerGroup', async (req, res) => {
 
     const { param } = req.query;
@@ -88,6 +101,11 @@ app.get('/getWarnings', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch data from external domain.' });
     }
 });
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
 app.get("/exchangeset", (req, res) => {
     axios.get(`${dashBoardApiUrl}/exchangeset`)

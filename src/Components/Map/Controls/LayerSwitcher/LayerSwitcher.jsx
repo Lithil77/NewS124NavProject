@@ -8,9 +8,15 @@ import { useColor } from '../../../../Contexts/ColorContext';
 import { nodeServerUrl } from '../../../../appConfig';
 import { toast } from 'react-toastify';
 import { useParams } from 'react-router-dom';
+<<<<<<< HEAD
 import './LayerSwitcher.css';
 import { id, isBuilder } from '../../../../Utils/AppDetails';
 import { mapLayers } from '../../../../Utils/layersDataConfig';
+=======
+import { useQuery } from 'react-query';
+import './LayerSwitcher.css';
+import { id } from '../../../../Utils/AppDetails';
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
 function LayerSwitcher() {
 
@@ -27,6 +33,7 @@ function LayerSwitcher() {
     const [selectedItems, setSelectedItems] = useState([]);
     const [layersData, setLayersData] = useState([]);
 
+<<<<<<< HEAD
     const fetchData = async () => {
         try {
             setLayersData(null);
@@ -58,6 +65,21 @@ function LayerSwitcher() {
             toast.warn('Error fetching layer data:', error);
         }
     };
+=======
+    const { isLoading: isLoadingLayerData, refetch: refetchLayerData } = useQuery(`/layers/${selectedProjectId}`, async () => {
+        const response = await fetch(`${nodeServerUrl}/layers/${selectedProjectId}`);
+        const data = await response.json();
+        if (data) {
+            const newLayerList = data.map(item => item.layer);
+            setLayersList(newLayerList);
+            setSelectedItems(newLayerList);
+            setLayersData(data)
+        }
+        else {
+            toast.warn('error fetching layer list');
+        }
+    });
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
     useEffect(() => {
         if (olMap) {
@@ -73,7 +95,10 @@ function LayerSwitcher() {
             if (layerSwitcherInfoSidebar != null && layerSwitcherSidebarConatiner != null) {
                 layerSwitcherInfoSidebar.appendChild(layerSwitcherSidebarConatiner);
             }
+<<<<<<< HEAD
             fetchData();
+=======
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         }
     }, [olMap]);
 
@@ -229,7 +254,10 @@ function LayerSwitcher() {
                         style={{ position: 'relative', height: 'auto', minHeight: '100px', overflow: 'auto' }}>
 
                         <Accordion defaultActiveKey="0" className='layerlistAccord'>
+<<<<<<< HEAD
 
+=======
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                             {layersList.map((lyr, index) => {
                                 return (
                                     <Accordion.Item key={index} eventKey={index} className='p-0' >

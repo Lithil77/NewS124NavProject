@@ -17,7 +17,11 @@ import CustomConfirmModel from '../../../Reusable/CustomConfirmModel';
 
 const StepperForm = () => {
 
+<<<<<<< HEAD
     const { s124NavWarningDataSetFileIdentifier, updates124GeometryType,s124listvalue } = useUtility();
+=======
+    const { s124NavWarningDataSetFileIdentifier, updates124GeometryType } = useUtility();
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     const [currentStep, setCurrentStep] = useState(1);
     const totalSteps = 3;
     const step1Ref = useRef(null);
@@ -30,7 +34,11 @@ const StepperForm = () => {
     const [lineButtonActive, setLineButtonActive] = useState(false);
     const [polygonButtonActive, setPolygonButtonActive] = useState(false);
     const [pointButtonActive, setPointButtonActive] = useState(false);
+<<<<<<< HEAD
     const { olMap, stopDrawAction} = useContext(OLMapContext);
+=======
+    const { olMap, stopDrawAction } = useContext(OLMapContext);
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     const [showModal, setShowModal] = useState(false);
     const [updatedJsonObject, setUpdatedJsonObject] = useState(null);
 
@@ -43,7 +51,11 @@ const StepperForm = () => {
         datasetTopicCategory: '',
         datasetPurpose: '',
         updateNumber: '',
+<<<<<<< HEAD
         navwarnpreambleId: '',
+=======
+        navwarnpreambleid: '',
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         agencyResponsibleForProduction: '',
         countryName: '',
         nameOfSeries: '',
@@ -66,7 +78,11 @@ const StepperForm = () => {
         navwarnTypeGeneral: 'Aids to Navigation Changes',
         intService: '',
         header: '',
+<<<<<<< HEAD
         navwarnpartId: '',
+=======
+        navwarnpartid: '',
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         dateStart: '',
         informationLanguage: '',
         information: '',
@@ -163,7 +179,11 @@ const StepperForm = () => {
                 'updateNumber': /^\d+$/
             },
             2: {
+<<<<<<< HEAD
                 'navwarnpreambleId': /^NW\.CA\.CCG\.[A-Z]\.\d{4}\.\d{2}\.\d{1}$/,
+=======
+                'navwarnpreambleid': /^NW\.CA\.CCG\.[A-Z]\.\d{4}\.\d{2}\.\d{1}$/,
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                 'agencyResponsibleForProduction': /^.+$/,
                 'countryName': /^.+$/,
                 'nameOfSeries': /^.$/,
@@ -172,15 +192,25 @@ const StepperForm = () => {
                 'warningType': /^.+$/,
                 'year': /^\d{4}$/,
                 'generalAreaLanguage': /^[a-z]{3}$/,
+<<<<<<< HEAD
                 'generalAreaName': /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?\s]+$/,
                 'locationNameLanguage': /^[a-z]{3}$/,
                 'locationName':/^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?\s]+$/,
+=======
+                'generalAreaName': /^.+$/,
+                'locationNameLanguage': /^[a-z]{3}$/,
+                'locationName': /^.+$/,
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                 'chartNumber': /^\d+$/,
                 'editionDate': /^\d{4}-\d{2}-\d{2}$/,
                 'language': /^[a-z]{3}$/,
                 'publicationAffected': /^.+$/,
                 'titleLanguage': /^[a-z]{3}$/,
+<<<<<<< HEAD
                 'title': /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?\s]+$/,
+=======
+                'title': /^.+$/,
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                 'publicationDate': /^\d{4}-\d{2}-\d{2}T/,
                 //'cancellationDate': null,
                 'navwarnTypeGeneral': /^.+$/,
@@ -188,9 +218,15 @@ const StepperForm = () => {
             },
             3: {
                 //'header': null,
+<<<<<<< HEAD
                 'navwarnpartId': /^urn:mrn:NW\.CA\.CCG\.[A-Z]\.\d{4}\.\d{2}$/,
                 'dateStart': /^\d{4}-\d{2}-\d{2}$/,
                 'information': /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?\s]+$/,
+=======
+                'navwarnpartid': /^urn:mrn:NW\.CA\.CCG\.[A-Z]\.\d{4}\.\d{2}$/,
+                'dateStart': /^\d{4}-\d{2}-\d{2}$/,
+                'information': /^.+$/,
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                 'informationLanguage': /^[a-z]{3}$/,
                 'navwarnTypeDetails': /^.+$/,
                 'geometryId': /^urn:mrn:NW\.CA\.CCG\.[A-Z]\.\d{4}\.\d{2}$/,
@@ -462,7 +498,11 @@ const StepperForm = () => {
                     "updateNumber": formData.updateNumber || '',
                 },
                 "S124:NAVWARNPreamble": {
+<<<<<<< HEAD
                     "navwarnpreambleId": formData.navwarnpreambleId || '',
+=======
+                    "navwarnpreambleid": formData.navwarnpreambleid || '',
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                     "agencyResponsibleForProduction": formData.agencyResponsibleForProduction || '',
                     "countryName": formData.countryName || '',
                     "nameOfSeries": formData.nameOfSeries || '',
@@ -479,6 +519,7 @@ const StepperForm = () => {
                     "language": formData.language || '',
                     "publicationAffected": formData.publicationAffected || '',
                     "titleLanguage": formData.titleLanguage || '',
+<<<<<<< HEAD
                     "title": formData.title || '',
                     "publicationDate": formData.publicationDate || '',
                     "cancellationDate": formData.cancellationDate || '',
@@ -488,6 +529,17 @@ const StepperForm = () => {
                 "S124:NAVWARNPart": {
                     "header": formData.header || '',
                     "navwarnpartId": formData.navwarnpartId || '',
+=======
+                    "title": formData.Title || '',
+                    "publicationDate": formData.publicationDate || '',
+                    "cancellationDate": formData.cancellationDate || '',
+                    "navwarnTypeGeneral": formData.navwarnTypeGeneral || '',
+                    "intService": formData.IntService || '',
+                },
+                "S124:NAVWARNPart": {
+                    "header": formData.header || '',
+                    "navwarnpartid": formData.navwarnpartid || '',
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                     "dateStart": formData.dateStart || '',
                     "informationLanguage": formData.informationLanguage || '',
                     "information": formData.information || '',
@@ -549,23 +601,39 @@ const StepperForm = () => {
 
             <Card>
                 <CardHeader className='p-1 bg-white'>
+<<<<<<< HEAD
                     <ListGroup horizontal className='d-flex justify-content-between'>
                         {["Dataset", "Preamble", "Part"].map((label, index) => (
+=======
+                    <ListGroup horizontal>
+                        {["Dataset", "Navwarnpreamble", "Navwarnpart"].map((label, index) => (
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                             <ListGroupItem
                                 key={index}
                                 onClick={() => handleStepClick(index + 1)}
                                 className={`arrowsteper rounded-0 ${index + 1 === currentStep ? "active" : ""}`}
+<<<<<<< HEAD
                                 style={{width: '33%'}}
+=======
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                             >
                                 {label}
                             </ListGroupItem>
                         ))}
                     </ListGroup>
                 </CardHeader>
+<<<<<<< HEAD
                 <CardBody className='p-0' style={{ maxHeight: 'calc(100vh - 200px)', height: '100vh', minHeight: '100%', overflow: 'auto' }}>
                     <Form>
                         {currentStep === 1 && <div ref={step1Ref}>
                             <div className='p-3'>
+=======
+                <CardBody className='p-0' style={{ maxHeight: 'calc(100vh - 169px)', height: '100%', minHeight: '100%', overflow: 'auto' }}>
+                    <Form>
+                        {currentStep === 1 && <div ref={step1Ref}>
+                            <h6 className='p-2' style={{ backgroundColor: 'aliceblue' }}>Dataset Identification Information</h6>
+                            <div className='p-2'>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                 <Row>
                                     <Col md className='pe-1' title='Dataset File Identifier'>
                                         <FloatingLabel label="Dataset File Identifier" className='mb-2'>
@@ -610,13 +678,21 @@ const StepperForm = () => {
                                 </Row>
                                 <Row>
                                     <Col md className='pe-1' title='Dataset Purpose'>
+<<<<<<< HEAD
                                         <FloatingLabel label="Dataset Purpose">
+=======
+                                        <FloatingLabel label="Dataset Purpose" className='mb-2'>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                             <Form.Control type="text" placeholder="Dataset Purpose" id="datasetPurpose" value={formData.datasetPurpose} onChange={handleInputChange} />
                                             {errors.datasetPurpose && <div className="text-danger error_msg">{errors.datasetPurpose}</div>}
                                         </FloatingLabel>
                                     </Col>
                                     <Col md className='ps-1' title='Update Number'>
+<<<<<<< HEAD
                                         <FloatingLabel label="Update Number">
+=======
+                                        <FloatingLabel label="Update Number" className='mb-2'>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                             <Form.Control type="text" placeholder="Update Number" id="updateNumber" value={formData.updateNumber} onChange={handleInputChange} />
                                             {errors.updateNumber && <div className="text-danger error_msg">{errors.updateNumber}</div>}
                                         </FloatingLabel>
@@ -627,12 +703,24 @@ const StepperForm = () => {
 
                         </div>}
                         {currentStep === 2 && <div ref={step2Ref}>
+<<<<<<< HEAD
                             <div className='p-3'>
                                     <Row>
                                         <Col md className='pe-1' title='Id'>
                                             <FloatingLabel label="Id" className='mb-2'>
                                                 <Form.Control type="text" placeholder="Id" id="navwarnpreambleId" value={formData.navwarnpreambleId} onChange={handleInputChange} />
                                                 {errors.navwarnpreambleId && <div className="text-danger error_msg">{errors.navwarnpreambleId}</div>}
+=======
+                            <h6 className='p-2' style={{ backgroundColor: 'aliceblue' }}>Navigational Warning Preamble</h6>
+                            <div className='p-1'>
+                                <div className='p-1' style={{ backgroundColor: '' }}>
+                                    <h6>Message series identifier</h6>
+                                    <Row>
+                                        <Col md className='pe-1' title='Id'>
+                                            <FloatingLabel label="Id" className='mb-2'>
+                                                <Form.Control type="text" placeholder="Id" id="navwarnpreambleid" value={formData.navwarnpreambleid} onChange={handleInputChange} />
+                                                {errors.navwarnpreambleid && <div className="text-danger error_msg">{errors.navwarnpreambleid}</div>}
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                             </FloatingLabel>
                                         </Col>
                                         <Col md className='ps-1' title='Agency Responsible for Production'>
@@ -710,8 +798,17 @@ const StepperForm = () => {
                                         </Col>
                                     </Row>
 
+<<<<<<< HEAD
 
                                     <h6>General Area</h6>
+=======
+                                </div>
+                                <div className='p-1'>
+                                    <h6>General Area</h6>
+                                    <FormGroup className='p-1 border rounded mb-2'>
+
+                                        <FormLabel><i>Location Name</i></FormLabel>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                         <Row>
                                             <Col md className='pe-1' title='Language'>
                                                 <FloatingLabel label="Language" className='mb-2'>
@@ -726,7 +823,16 @@ const StepperForm = () => {
                                                 </FloatingLabel>
                                             </Col>
                                         </Row>
+<<<<<<< HEAD
                                     <h6>Locality</h6>
+=======
+                                    </FormGroup>
+                                </div>
+                                <div className='p-1'>
+                                    <h6>Locality</h6>
+                                    <FormGroup className='p-1 border rounded mb-2'>
+                                        <FormLabel><i>Location Name</i></FormLabel>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                         <Row>
                                             <Col md className='pe-1' title='Language'>
                                                 <FloatingLabel label="Language" className='mb-2'>
@@ -741,7 +847,16 @@ const StepperForm = () => {
                                                 </FloatingLabel>
                                             </Col>
                                         </Row>
+<<<<<<< HEAD
                                     <h6>Affected Chart Publications</h6>
+=======
+                                    </FormGroup>
+                                </div>
+                                <div className='p-1'>
+                                    <h6>Affected Chart Publications</h6>
+                                    <FormGroup className='p-1 border rounded mb-2'>
+                                        <FormLabel><i>Chart Affected</i></FormLabel>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                         <Row>
                                             <Col md className='pe-1' title='Chart Number'>
                                                 <FloatingLabel label="Chart Number" className='mb-2'>
@@ -770,6 +885,13 @@ const StepperForm = () => {
                                                 </FloatingLabel>
                                             </Col>
                                         </Row>
+<<<<<<< HEAD
+=======
+                                    </FormGroup>
+
+                                    <FormGroup className='p-1 border rounded mb-2'>
+                                        <FormLabel><i>Title</i></FormLabel>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                         <Row>
                                             <Col md className='pe-1' title='Language'>
                                                 <FloatingLabel label="Language" className='mb-2'>
@@ -784,6 +906,10 @@ const StepperForm = () => {
                                                 </FloatingLabel>
                                             </Col>
                                         </Row>
+<<<<<<< HEAD
+=======
+                                    </FormGroup>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                     <Row>
                                         <Col md className='pe-1' title='Cancellation Date'>
                                             <FloatingLabel label="Cancellation Date" className='mb-2'>
@@ -817,17 +943,31 @@ const StepperForm = () => {
                                             </FloatingLabel>
                                         </Col>
                                         <Col md className='ps-1' title='Int Service'>
+<<<<<<< HEAD
                                         
+=======
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                             <FloatingLabel label="Int Service" className='mb-2'>
                                                 <Form.Control type="text" placeholder="Int Service" id="intService" value={formData.intService} onChange={handleInputChange} />
                                                 {errors.intService && <div className="text-danger error_msg">{errors.intService}</div>}
                                             </FloatingLabel>
                                         </Col>
                                     </Row>
+<<<<<<< HEAD
                                     </div>
                         </div>}
                         {currentStep === 3 && <div ref={step3Ref}>
                             <div className='p-3'>
+=======
+                                </div>
+                            </div>
+
+                        </div>}
+                        {currentStep === 3 && <div ref={step3Ref}>
+                            <h6 className='p-2' style={{ backgroundColor: 'aliceblue' }}>Navigational Warning Part</h6>
+                            <div className='p-2'>
+                                <div className='p-1'>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                     <Row>
                                         <Col md className='pe-1' title='Header'>
                                             <FloatingLabel label="Header" className='mb-2'>
@@ -837,8 +977,13 @@ const StepperForm = () => {
                                         </Col>
                                         <Col md className='ps-1' title='Id'>
                                             <FloatingLabel label="Id" className='mb-2'>
+<<<<<<< HEAD
                                                 <Form.Control type="text" placeholder="Id" id='navwarnpartId' value={formData.navwarnpartId} onChange={handleInputChange} />
                                                 {errors.navwarnpartId && <div className="text-danger error_msg">{errors.navwarnpartId}</div>}
+=======
+                                                <Form.Control type="text" placeholder="Id" id='navwarnpartid' value={formData.navwarnpartid} onChange={handleInputChange} />
+                                                {errors.navwarnpartid && <div className="text-danger error_msg">{errors.navwarnpartid}</div>}
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                                             </FloatingLabel>
                                         </Col>
                                     </Row>
@@ -850,6 +995,7 @@ const StepperForm = () => {
                                             </FloatingLabel>
                                         </Col>
                                     </Row>
+<<<<<<< HEAD
                                     <Row>
                                         <Col md className='pe-1' title='Language'>
                                             <FloatingLabel label="Language" className='mb-2'>
@@ -941,6 +1087,106 @@ const StepperForm = () => {
                                 onClick={(e) => handleSubmit(e, currentStep)}
                             >
                                 <i class="bi bi-save"></i> 
+=======
+                                    <FormGroup className='p-1 border rounded mb-2'>
+                                        <FormLabel><i>Warning Information</i></FormLabel>
+                                        <Row>
+                                            <Col md className='pe-1' title='Language'>
+                                                <FloatingLabel label="Language" className='mb-2'>
+                                                    <Form.Control type="text" placeholder="Language" id="informationLanguage" value={formData.informationLanguage} onChange={handleInputChange} />
+                                                    {errors.informationLanguage && <div className="text-danger error_msg">{errors.informationLanguage}</div>}
+                                                </FloatingLabel>
+                                            </Col>
+                                            <Col md className='ps-1' title='Text'>
+                                                <FloatingLabel label="Text" className='mb-2'>
+                                                    <Form.Control type="text" placeholder="Text" id="information" value={formData.information} onChange={handleInputChange} />
+                                                    {errors.information && <div className="text-danger error_msg">{errors.information}</div>}
+                                                </FloatingLabel>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col md title='Navwarn Type Details'>
+                                                <FloatingLabel label="Navwarn Type Details" className='mb-2'>
+                                                    <Form.Control type="text" placeholder="Navwarn Type Details" id="navwarnTypeDetails" value={formData.navwarnTypeDetails} onChange={handleInputChange} />
+                                                    {errors.navwarnTypeDetails && <div className="text-danger error_msg">{errors.navwarnTypeDetails}</div>}
+                                                </FloatingLabel>
+                                            </Col>
+                                        </Row>
+                                    </FormGroup>
+                                    <FormGroup className='p-1 border rounded mb-2'>
+                                        <FormLabel><i>Geometry</i></FormLabel>
+                                        <div>
+                                            <Stack direction="horizontal" className='mt-3'>
+                                                <div className="p-0">
+                                                    <ButtonGroup className='mt-0'>
+                                                        <StyledButton title='Line' id="btn-LineString" onClick={() => handleDrawLine('LineString')} active={lineButtonActive || formData.geometryType === 'Line'}   >
+                                                            <i className="bi bi-activity"></i>
+                                                        </StyledButton>
+                                                        <StyledButton title='Polygon' id="btn-Polygon" onClick={() => handleDrawPolygon('Polygon')} active={polygonButtonActive || formData.geometryType === 'Polygon'}>
+                                                            <i className="bi bi-pentagon"></i>
+                                                        </StyledButton>
+                                                        <StyledButton title='Point' id="btn-Point" onClick={() => handleDrawPoint('Point')} active={pointButtonActive || formData.geometryType === 'Point'}>
+                                                            <i className="bi bi-geo-fill"></i>
+                                                        </StyledButton>
+
+                                                    </ButtonGroup>
+                                                </div>
+
+                                            </Stack>
+                                        </div>
+                                        <Row>
+                                            <Col md className="pe-1" title='GeometryId'>
+                                                <FloatingLabel label="GeometryId" className='mb-2'>
+                                                    <Form.Control type="text" placeholder="GeometryId" id="geometryId" value={formData.geometryId} onChange={handleInputChange} />
+                                                    {errors.geometryId && <div className="text-danger error_msg">{errors.geometryId}</div>}
+                                                </FloatingLabel>
+                                            </Col>
+                                            <Col md className="ps-1" title='SrsName'>
+                                                <FloatingLabel label="SrsName" className='mb-2'>
+                                                    <Form.Control type="text" placeholder="SrsName" id="srsName" value={formData.srsName} onChange={handleInputChange} />
+                                                    {errors.srsName && <div className="text-danger error_msg">{errors.srsName}</div>}
+                                                </FloatingLabel>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col md className="pe-1" title='SrsDimension'>
+                                                <FloatingLabel label="SrsDimension" className='mb-2'>
+                                                    <Form.Control type="text" placeholder="SrsDimension" id="srsDimension" value={formData.srsDimension} onChange={handleInputChange} />
+                                                    {errors.srsDimension && <div className="text-danger error_msg">{errors.srsDimension}</div>}
+                                                </FloatingLabel>
+                                            </Col>
+                                            <Col md className="ps-1" title='Coordinates'>
+                                                <FloatingLabel label="Coordinates" className='mb-2'>
+                                                    <Form.Control type="text" placeholder="Coordinates" id="coordinates" value={formData.coordinates} onChange={handleInputChange} />
+                                                    {errors.coordinates && <div className="text-danger error_msg">{errors.coordinates}</div>}
+                                                </FloatingLabel>
+                                            </Col>
+                                        </Row>
+                                    </FormGroup>
+                                </div>
+                            </div>
+                        </div>}
+                    </Form>
+                </CardBody>
+                <CardFooter className='p-1 d-flex justify-content-end'>
+                    <div className='d-flex'>
+                        <Button variant="secondary" size='sm' onClick={prevStep} disabled={currentStep === 1} className="me-2">
+                            Previous
+                        </Button>
+                        <Button variant="primary" size='sm' onClick={nextStep} className="me-2" disabled={currentStep === totalSteps}>
+                            Next
+                        </Button>
+                        {currentStep === totalSteps && (
+                            <Button size='sm'
+                                variant="primary"
+
+                                onClick={(e) => handleSubmit(e, currentStep)}
+                                className='me-2'
+                            //disabled={!isJsonConverted|| !isFormValid}
+
+                            >
+                                Save
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                             </Button>
                         )}
                         <Form.Group>
@@ -951,11 +1197,17 @@ const StepperForm = () => {
                                 accept=".yaml, .yml, .json, .gml"
                                 onChange={handleFileChange}
                             />
+<<<<<<< HEAD
                             <Button variant="outline-secondary" onClick={handleClick} disabled={!!s124listvalue} title='Import YAML/GML/JSON'><i class="bi bi-upload"></i></Button>
                            
                         </Form.Group>
                         <Button variant="outline-secondary" title='Reset'><i class="bi bi-arrow-clockwise"></i></Button>
                         </Stack>
+=======
+                            <Button size='sm' onClick={handleClick}>Import YAML/GML/JSON</Button>
+                        </Form.Group>
+                    </div>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                 </CardFooter>
             </Card>
             <CustomConfirmModel

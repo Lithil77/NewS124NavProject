@@ -83,7 +83,11 @@ const DataSet = () => {
     };
 
     const generateDeleteButtonHTML = (datasetId) => {
+<<<<<<< HEAD
         return `<i className="bi bi-trash text-danger" style="cursor: pointer;" title="Delete" onclick="handledatasetDeleteConfirmation('${datasetId}')"></i>`;
+=======
+        return `<i class="bi bi-trash text-danger" style="cursor: pointer;" title="Delete" onclick="handledatasetDeleteConfirmation('${datasetId}')"></i>`;
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     };
 
     window.handledatasetDeleteConfirmation = async (dataset_id) => {

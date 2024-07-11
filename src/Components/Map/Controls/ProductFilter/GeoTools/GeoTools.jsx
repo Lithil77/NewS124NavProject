@@ -373,6 +373,7 @@ function GeoTools() {
             <Stack direction="horizontal" className='mt-3'>
                 <div className="p-0">
                     <ButtonGroup className='mt-0'>
+<<<<<<< HEAD
                         <StyledButton title='Line' id="btn-LineString" onClick={handleDrawLine} active={lineButtonActive} className={`drawBtn ${lineButtonActive ? 'active' : ''} ${lineButtonVisible ? '' : 'disabled'}`} disabled={!lineButtonVisible}>
                             <i className="bi bi-activity"></i>
                         </StyledButton>
@@ -384,12 +385,29 @@ function GeoTools() {
                         </StyledButton>
                         <input ref={fileInputRef} type='file' accept='.rtz' onChange={handleFileChange} style={{ display: 'none' }} />
                         <StyledButton title='rtz' id='btn-Rtz' onClick={handleRtzFileClick} active={rtzButtonActive} className={`drawBtn ${rtzButtonActive ? 'active' : ''} ${rtzButtonVisible ? '' : 'disabled'}`}  disabled={!rtzButtonVisible}>
+=======
+                        <StyledButton title='Line' id="btn-LineString" onClick={handleDrawLine} active={lineButtonActive} className={`drawBtn ${lineButtonActive ? 'active' : ''} ${lineButtonVisible ? '' : 'disabled'}`}>
+                            <i className="bi bi-activity"></i>
+                        </StyledButton>
+                        <StyledButton title='Polygon' id="btn-Polygon" onClick={handleDrawPolygon} active={polygonButtonActive} className={`drawBtn ${polygonButtonActive ? 'active' : ''} ${polygonButtonVisible ? '' : 'disabled'}  `}>
+                            <i className="bi bi-pentagon"></i>
+                        </StyledButton>
+                        <StyledButton title='Point' id="btn-Point" onClick={handleDrawPoint} active={pointButtonActive} className={`drawBtn ${pointButtonActive ? 'active' : ''} ${pointButtonVisible ? '' : 'disabled'}`}>
+                            <i className="bi bi-geo-fill"></i>
+                        </StyledButton>
+                        <input ref={fileInputRef} type='file' accept='.rtz' onChange={handleFileChange} style={{ display: 'none' }} />
+                        <StyledButton title='rtz' id='btn-Rtz' onClick={handleRtzFileClick} active={rtzButtonActive} className={`drawBtn ${rtzButtonActive ? 'active' : ''} ${rtzButtonVisible ? '' : 'disabled'}`}>
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                             <i className='bi bi-upload' />
                         </StyledButton>
                     </ButtonGroup>
                 </div>
                 <div className="p-0 ms-auto">
+<<<<<<< HEAD
                     <StyledButton title='Calendar' className={`${calenderBtnVisible ? '' : 'disabled'}`} disabled={!calenderBtnVisible}
+=======
+                    <StyledButton title='Calendar' className={`${calenderBtnVisible ? '' : 'disabled'}`}
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                         id="btn-Calender" onClick={handleOpenCalendar} ref={overlayCalenderRef} style={{ backgroundColor, color: textColor, borderColor }}>
                         <i className='bi bi-calendar'></i>
                     </StyledButton>

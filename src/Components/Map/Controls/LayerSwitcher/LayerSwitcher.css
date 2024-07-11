@@ -1,5 +1,12 @@
 .layerlistAccord>.accordion-item>.accordion-header>.accordion-button {
     padding: 6px;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     opacity:0.8;
 }
 .layerlistAccord{
@@ -18,4 +25,15 @@ background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
 }
 .layerlistAccord>.accordion-item:nth-child(4)>.accordion-header> button {
 background: linear-gradient(135deg, #c3cfe2 0%, #c3cfe2 100%);
+<<<<<<< HEAD
 } */
+=======
+<<<<<<< HEAD
+} */
+=======
+} */
+=======
+}
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84

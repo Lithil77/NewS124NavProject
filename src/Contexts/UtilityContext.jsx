@@ -29,12 +29,27 @@ export const UtilityProvider = ({ children }) => {
         setAttributeQueryBottomTablePanelVisible(value)
     };
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     const [ActivewarnlistBottomTablePanelVisible, setActivewarnlistBottomTablePanelVisible] = useState(false);
 
     const updateActivewarnlistBottomTableVisible = (value) => {
         setActivewarnlistBottomTablePanelVisible(value)
     };
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     const [collapsedQueryResultPanel, setCollapsedQueryResultPanel] = useState(false);
 
     const updateCollapsedQueryResultPanel = (value) => {
@@ -70,7 +85,15 @@ export const UtilityProvider = ({ children }) => {
         SetAttributeQueryPanelVisible(value);
     }
 
+<<<<<<< HEAD
     const { olMap, stopDrawAction, clearVectorSource, mapOverlay } = useContext(OLMapContext);
+=======
+<<<<<<< HEAD
+    const { olMap, stopDrawAction, clearVectorSource, mapOverlay } = useContext(OLMapContext);
+=======
+    const { olMap, stopDrawAction, clearVectorSource } = useContext(OLMapContext);
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
     const [isBaseMapWindowVisible, setIsBaseMapWindowVisible] = useState(false);
 
@@ -127,6 +150,10 @@ export const UtilityProvider = ({ children }) => {
     const updates124NavWarningsSideBarPanel = (value) => {
         sets124NavWarningsSideBarPanel(value);
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
     const [s124geometrytype, sets124GeometryType] = useState('');
 
@@ -145,12 +172,17 @@ export const UtilityProvider = ({ children }) => {
         setS124NavWarningDataSetFileIdentifier(value);
     }
 
+<<<<<<< HEAD
     const [s124listvalue, setS124s124listvalue] = useState('');
 
     const updateS124listvalue = (value) => {
         setS124s124listvalue(value);
     }
 
+=======
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     const removeZoomWindowFunctionality = (olMap) => {
         if (dragBoxRef.current) {
             olMap.removeInteraction(dragBoxRef.current);
@@ -188,6 +220,10 @@ export const UtilityProvider = ({ children }) => {
             setClickHandlers([]);
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         var buttons = document.querySelectorAll('.ZoomextentBtn');
         buttons.forEach(function (button) {
             button.classList.remove('active');
@@ -205,6 +241,11 @@ export const UtilityProvider = ({ children }) => {
             mapContainer.style.cursor = 'default';
         }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         const validTypes = ['productFilter', 'attributeQuery', 'FeatureInfo',
             'BaseMaps', 'Measure', 'ZoomWindow', 'Home', "other"];
 
@@ -222,6 +263,10 @@ export const UtilityProvider = ({ children }) => {
             }
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     };
 
     const [featureInfoRecords, setFeatureInfoRecords] = useState([]);
@@ -230,6 +275,28 @@ export const UtilityProvider = ({ children }) => {
         setFeatureInfoRecords(records);
     }
 
+<<<<<<< HEAD
+=======
+=======
+        let featureInfoBtn = document.getElementById("featureInfoBtn");
+
+        if (featureInfoBtn != null) {
+            featureInfoBtn.classList.remove('active');
+        }
+
+        var buttons = document.querySelectorAll('.ZoomextentBtn');
+        buttons.forEach(function (button) {
+            button.classList.remove('active');
+        });
+
+        let mapContainer = document.getElementById('map-container');
+        if (mapContainer) {
+            mapContainer.style.cursor = 'default';
+        }
+    };
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     const toggleComponent = (component, olMap) => {
         const componentActions = {
             "ZoomIn": () => {
@@ -265,6 +332,13 @@ export const UtilityProvider = ({ children }) => {
                 updateLayerSwitcherSideBarPanel(false);
                 updates124NavWarningsSideBarPanel(false);
                 clearAttributeQueryValues();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             },
             "previousExtend": () => {
                 unregisterFeatureInfoClickHandlers("previousExtend", olMap);
@@ -278,6 +352,13 @@ export const UtilityProvider = ({ children }) => {
                 updates124NavWarningsSideBarPanel(false);
                 clearAttributeQueryValues();
                 bottomTablePanelDisabled();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             },
             "NextExtend": () => {
                 unregisterFeatureInfoClickHandlers("NextExtend", olMap);
@@ -291,6 +372,13 @@ export const UtilityProvider = ({ children }) => {
                 updates124NavWarningsSideBarPanel(false);
                 clearAttributeQueryValues();
                 bottomTablePanelDisabled();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             },
             "ZoomWindow": () => {
                 unregisterFeatureInfoClickHandlers("ZoomWindow", olMap);
@@ -304,6 +392,13 @@ export const UtilityProvider = ({ children }) => {
                 clearAttributeQueryValues();
                 bottomTablePanelDisabled();
                 updateProductFilterSideBarPanel(false);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             },
             "BaseMaps": () => {
                 updateFeatureInfoSideBarPanel(false);
@@ -322,7 +417,14 @@ export const UtilityProvider = ({ children }) => {
                 clearAttributeQueryValues();
                 bottomTablePanelDisabled();
                 updateProductFilterSideBarPanel(false);
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             },
             "FeatureInfo": () => {
                 updateIsBaseMapwindowVisible(false);
@@ -336,8 +438,23 @@ export const UtilityProvider = ({ children }) => {
 
                 updateCollapsedQueryResultPanel(true);
                 updateAttributeQueryBottomTablePanelVisible(false);
+<<<<<<< HEAD
                 updateProductFilterBottomTablePanelvisible(true);
                 updateProductFilterSideBarPanel(false);
+=======
+<<<<<<< HEAD
+                updateProductFilterBottomTablePanelvisible(true);
+                updateProductFilterSideBarPanel(false);
+=======
+<<<<<<< HEAD
+                updateProductFilterBottomTablePanelvisible(true);
+=======
+                updateProductFilterBottomTablePanelvisible(false);
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+                updateProductFilterSideBarPanel(false);
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             },
             "layerSwitcher": () => {
                 updateLayerSwitcherSideBarPanel(true);
@@ -347,7 +464,17 @@ export const UtilityProvider = ({ children }) => {
                 stopDrawAction();
                 updateFeatureInfoFlag(false);
                 removeZoomWindowFunctionality(olMap);
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+                /*
+                updateFeatureInfoSideBarPanel(false);
+               */
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                 updateProductFilterSideBarPanel(false);
                 updates124NavWarningsSideBarPanel(false);
             },
@@ -388,9 +515,18 @@ export const UtilityProvider = ({ children }) => {
                 updateAttributeQueryPanelVisible(true);
                 updateProductFilterBottomTablePanelvisible(false);
                 updateProductFilterSideBarPanel(false);
+<<<<<<< HEAD
                 if (attributeQueryPanelVisible && mapOverlay) {
                     olMap.addOverlay(mapOverlay);
                 }
+=======
+<<<<<<< HEAD
+                if (attributeQueryPanelVisible && mapOverlay) {
+                    olMap.addOverlay(mapOverlay);
+                }
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             },
             "Measure": () => {
                 updateFeatureInfoSideBarPanel(false);
@@ -445,10 +581,19 @@ export const UtilityProvider = ({ children }) => {
 
     const clearAttributeQueryValues = () => {
         updateAttributeQueryPanelVisible(false);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
         if (attributeQueryPanelVisible == false) {
             olMap.removeOverlay(mapOverlay);
         }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         if (typeaheadRef.current) {
             typeaheadRef.current.clear();
         }
@@ -478,12 +623,28 @@ export const UtilityProvider = ({ children }) => {
                 searchInputloading, updateSearchInputloading, typeaheadRef, updateSelectedAttributeQueryOption,
                 selectedAttributeQueryOption, collapsedQueryResultPanel, updateCollapsedQueryResultPanel,
                 attributeQueryBottomTablePanelVisible, updateAttributeQueryBottomTablePanelVisible,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
                 ActivewarnlistBottomTablePanelVisible, updateActivewarnlistBottomTableVisible,
                 activeKey, updates124activekey, updateS124NavWarningDataSetFileIdentifier, s124NavWarningDataSetFileIdentifier,
                 s124geometrytype,updates124GeometryType,
                 productFilterBottomTablePanelVisible, updateProductFilterBottomTablePanelvisible, logoFlag, updateLogoFlagValue,
                 productFilterSideBarPanel, updateProductFilterSideBarPanel, updates124NavWarningsSideBarPanel, s124NavWarningsSideBarPanel,
+<<<<<<< HEAD
                 updateFeatureInfoRecords, featureInfoRecords,s124listvalue,updateS124listvalue
+=======
+                updateFeatureInfoRecords, featureInfoRecords
+=======
+<<<<<<< HEAD
+                ActivewarnlistBottomTablePanelVisible,updateActivewarnlistBottomTableVisible,
+=======
+>>>>>>> aed419737ce16b1fb706c4378d56f6129b74df83
+                productFilterBottomTablePanelVisible, updateProductFilterBottomTablePanelvisible, logoFlag, updateLogoFlagValue,
+                productFilterSideBarPanel, updateProductFilterSideBarPanel, updates124NavWarningsSideBarPanel, s124NavWarningsSideBarPanel,
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             }}>
                 {children}
             </UtilityContext.Provider>

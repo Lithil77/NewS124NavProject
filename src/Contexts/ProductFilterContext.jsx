@@ -2,9 +2,18 @@ import React, { createContext, useContext, useState } from 'react';
 import ImageWMS from 'ol/source/ImageWMS.js';
 import ImageLayer from 'ol/layer/Image.js';
 import { toast } from 'react-toastify';
+<<<<<<< HEAD
 import axios from 'axios';
 import { nodeServerUrl } from '../appConfig';
 
+=======
+<<<<<<< HEAD
+import axios from 'axios';
+import { nodeServerUrl } from '../appConfig';
+
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
 
 export const ProductFilterContext = createContext();
 
@@ -171,7 +180,14 @@ export const ProductFilterProvider = ({ children }) => {
             setPointButtonVisible(true);
             setRtzButtonVisible(true);
             setCalenderBtnVisible(false);
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         }
     }
 
@@ -240,6 +256,13 @@ export const ProductFilterProvider = ({ children }) => {
         let layerUrl;
         if (olMap) {
             const layersList = olMap.getLayers().getArray();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
             const targetLayer = layersList.find(lyr =>
                 lyr instanceof ImageLayer &&
                 lyr.getSource() instanceof ImageWMS &&
@@ -277,6 +300,10 @@ export const ProductFilterProvider = ({ children }) => {
         setCalenderBtnVisible(false);
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     async function getLayersFromLayerGroup(geoserverUrl, selectedMapLayer) {
 
         const url = new URL(geoserverUrl);
@@ -539,6 +566,11 @@ export const ProductFilterProvider = ({ children }) => {
             return [];
         }
     };
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
     return (
         <ProductFilterContext.Provider value={{
             selectedMapLayer, updateSelectedMapLayer,
@@ -556,9 +588,19 @@ export const ProductFilterProvider = ({ children }) => {
             pointButtonActive, setPointButtonActive, rtzButtonActive, setRtzButtonActive, toggleGeometryButtons,
             flag, setFlag, unableBtns, clearSomeFields, enableGeomertyContainer, SetEnableGeomertyContainer,
             enableGeomertyButtonsOnCountrySelection, deactiveGeometryBtns, updateFeatureData, featureData, clearFeatureData,
+<<<<<<< HEAD
             headers, updateHeader, makeInitialState, showGeometryClearDialog, setShowGeometryClearDialog,
             getLayersFromLayerGroup, getS124NavigationalWarningTypes, getS124NavWarnDataSetIDs, getS124NavigationalGeometryTypes,
             getS124NavWarnPublicationDates, getDataSetIdsForAttributeQuery
+=======
+<<<<<<< HEAD
+            headers, updateHeader, makeInitialState, showGeometryClearDialog, setShowGeometryClearDialog,
+            getLayersFromLayerGroup, getS124NavigationalWarningTypes, getS124NavWarnDataSetIDs, getS124NavigationalGeometryTypes,
+            getS124NavWarnPublicationDates, getDataSetIdsForAttributeQuery
+=======
+            headers, updateHeader, makeInitialState, showGeometryClearDialog, setShowGeometryClearDialog
+>>>>>>> 51672d5f138b4eb84622956442c1c4837ee6bb8f
+>>>>>>> b9629baa6d12eff5d2ffed82bbd9569191ab1d84
         }}>
             {children}
         </ProductFilterContext.Provider>
